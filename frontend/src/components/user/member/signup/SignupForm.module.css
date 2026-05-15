@@ -1,0 +1,148 @@
+.authPage {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+}
+
+.authBox {
+    width: 100%;
+    max-width: 480px;
+    margin: 20px;
+    padding: 44px 40px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+}
+
+.authLogo {
+    display: block;
+    width: 100%;
+    margin-bottom: 28px;
+    font-size: 26px;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: -1px;
+    cursor: pointer;
+}
+
+.authTitle {
+    margin-bottom: 24px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.authFormGroup {
+    margin-bottom: 14px;
+}
+
+.authLabel {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+}
+
+.authInput {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #fff;
+}
+
+.authInput:focus {
+    border-color: #000;
+}
+
+.authInputRow {
+    display: flex;
+    gap: 8px;
+}
+
+.authInputRow .authInput {
+    flex: 1;
+}
+
+.authVerifyBtn {
+    padding: 12px 14px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.authVerifyBtn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.authVerifyBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.authSubmitBtn {
+    width: 100%;
+    margin-top: 6px;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: #000;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.authSubmitBtn:hover {
+    background: #333;
+}
+
+.authSubmitBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.authLinks {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.authTextLink {
+    font-size: 13px;
+    color: #888;
+}
+
+.authTextLink:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.authVerified {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #16a34a;
+}
+
+.authGuideText {
+    margin-top: 7px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #2563eb;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    padding: 6px 10px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+}

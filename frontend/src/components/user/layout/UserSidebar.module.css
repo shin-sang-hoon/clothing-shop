@@ -1,0 +1,1000 @@
+/* ===== UserSidebar.module.css ===== */
+/* 사용자 좌측 사이드바 전용 스타일 */
+
+.sidebarOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+
+.sidebarOverlayOpen {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-12px);
+  width: 900px;
+  max-width: 95vw;
+  max-height: calc(100vh - 80px);
+  background: #fff;
+  z-index: 501;
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebarOpen {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(-50%) translateY(0);
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.sidebarHeaderTitle {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.sidebarClose {
+  font-size: 22px;
+  cursor: pointer;
+  color: #666;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebarMainTabs {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.sidebarMainTab {
+  flex: 1;
+  padding: 13px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #999;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.sidebarMainTabActive {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+.sidebarBody {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sidebarBodyCategory {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarCategoryModalBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarCategorySteps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  flex-shrink: 0;
+}
+
+.sidebarCategoryStepItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 0 12px;
+  position: relative;
+}
+
+.sidebarCategoryStepItem:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -12px;
+  width: 24px;
+  height: 1px;
+  background: #d1d5db;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sidebarCategoryStepCircle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #d1d5db;
+  color: #9ca3af;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.sidebarCategoryStepLabel {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sidebarCategoryStepActive .sidebarCategoryStepCircle {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #fff;
+}
+
+.sidebarCategoryStepActive .sidebarCategoryStepLabel {
+  color: #2563eb;
+}
+
+.sidebarCategoryStepDone .sidebarCategoryStepCircle {
+  border-color: #16a34a;
+  background: #16a34a;
+  color: #fff;
+}
+
+.sidebarCategoryStepDone .sidebarCategoryStepLabel {
+  color: #16a34a;
+}
+
+.sidebarCategoryBodyInner {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.sidebarCategoryDesc {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.sidebarCategoryDescMuted {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 16px;
+}
+
+.sidebarCategoryBackRow {
+  margin-bottom: 12px;
+}
+
+.sidebarCategoryBackBtn {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2563eb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sidebarCategoryBackBtn:hover {
+  text-decoration: underline;
+}
+
+.sidebarCategoryParentGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.sidebarCategoryParentBtn {
+  height: 52px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.sidebarCategoryParentBtn:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.sidebarCategoryParentBtnActive {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.sidebarCategoryChildGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.sidebarCategoryChildBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: 0.15s;
+  text-align: center;
+}
+
+.sidebarCategoryChildBtn:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.sidebarCategoryChildBtnActive {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.sidebarCategoryFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 14px 20px;
+  border-top: 1px solid #f1f5f9;
+  flex-shrink: 0;
+  background: #fff;
+}
+
+.sidebarCategoryNextBtn,
+.sidebarCategoryConfirmBtn {
+  height: 42px;
+  min-width: 104px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  background: #c7d2fe;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sidebarCategoryNextBtn:disabled,
+.sidebarCategoryConfirmBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.sidebarCategoryNextBtn:not(:disabled),
+.sidebarCategoryConfirmBtn:not(:disabled) {
+  background: #2563eb;
+}
+
+.sidebarGenderTabs {
+  display: flex;
+  padding: 14px 20px;
+  gap: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sidebarGenderTab {
+  padding: 7px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.sidebarGenderTab:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.sidebarGenderTab:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.sidebarGenderTab+.sidebarGenderTab {
+  border-left: none;
+}
+
+.sidebarGenderTabActive {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.categoryList {
+  padding: 8px 0;
+}
+
+.categoryItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.categoryItem:hover:not(.categoryItemActive) {
+  background: #f0f0f0;
+  color: #000;
+}
+
+.categoryItemActive {
+  background: #000;
+  color: #fff;
+}
+
+.categoryCheckbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #000;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.categoryLabel {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1;
+}
+
+.applyBtnWrap {
+  padding: 14px 20px;
+  border-top: 1px solid #eee;
+  flex-shrink: 0;
+  background: #fff;
+}
+
+.applyBtn {
+  width: 100%;
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.applyBtn:hover {
+  background: #333;
+}
+
+.brandSearchWrap {
+  padding: 14px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.brandSearchInner {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.brandSearchInner input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 13px;
+  border: none;
+  outline: none;
+}
+
+.brandSearchInner span {
+  padding: 10px 14px;
+  color: #888;
+  font-size: 16px;
+}
+
+.sidebarBrandFilterWrap {
+  padding: 12px 20px 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sidebarBrandConsonantRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding-bottom: 6px;
+}
+
+.sidebarBrandConsonantBtn {
+  padding: 5px 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  min-width: 36px;
+  text-align: center;
+}
+
+.sidebarBrandConsonantBtn:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+.sidebarBrandConsonantBtnActive {
+  padding: 5px 10px;
+  border: 1px solid #111827;
+  border-radius: 5px;
+  background: #111827;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  min-width: 36px;
+  text-align: center;
+}
+
+.brandCount {
+  padding: 10px 20px;
+  font-size: 12px;
+  color: #888;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.brandList {
+  padding: 4px 0;
+}
+
+.brandItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.brandItem:hover {
+  background: #f9f9f9;
+}
+
+.brandItemLogo {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  border-radius: 50%;
+  border: 1px solid #f0f0f0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.brandItemInfo {
+  flex: 1;
+}
+
+.brandItemName {
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brandItemNameEn {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.brandExclusive {
+  font-size: 10px;
+  background: #000;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.brandHeart {
+  font-size: 18px;
+  color: #ccc;
+  flex-shrink: 0;
+}
+
+.brandHeartLiked {
+  color: #e65c00;
+}
+
+.brandEmpty {
+  padding: 32px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* ===== Step Indicator ===== */
+.stepIndicator {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stepCircle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  background: #e5e7eb;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.stepItemActive .stepCircle {
+  background: #111827;
+  color: #fff;
+}
+
+.stepItemDone .stepCircle {
+  background: #111827;
+  color: #fff;
+}
+
+.stepLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #9ca3af;
+}
+
+.stepItemActive .stepLabel {
+  color: #111827;
+}
+
+.stepItemDone .stepLabel {
+  color: #6b7280;
+}
+
+.stepConnector {
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+/* ===== Category Grid (Step 1) ===== */
+.categoryGridWrap {
+  padding: 20px 24px;
+}
+
+.categoryGridHint {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.categoryGridBtn {
+  padding: 18px 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.categoryGridBtn:hover {
+  border-color: #111827;
+  background: #f9fafb;
+}
+
+/* ===== Sub Category (Step 2) ===== */
+.subCategoryWrap {
+  padding: 0;
+}
+
+.subCatHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.subCatBackBtn {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  background: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.subCatBackBtn:hover {
+  background: #f3f4f6;
+}
+
+.subCatTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  flex: 1;
+}
+
+.subCatCount {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.subCatGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 16px 20px;
+}
+
+.subCatGridBtn {
+  padding: 14px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.subCatGridBtn:hover {
+  border-color: #111827;
+  background: #f9fafb;
+}
+
+/* ===== Category Empty State ===== */
+.catEmptyMsg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40px 20px;
+  text-align: center;
+  color: #bbb;
+}
+
+.catEmptyIcon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.catEmptyMsg p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ===== Category Product Header ===== */
+.catProductHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.catProductCount {
+  font-size: 12px;
+  color: #888;
+}
+
+.catProductSortLabel {
+  font-size: 12px;
+  color: #555;
+  font-weight: 600;
+}
+
+/* ===== Category Group Section ===== */
+.catGroupSection {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 4px;
+}
+
+.catGroupTitle {
+  font-size: 13px;
+  font-weight: 800;
+  color: #222;
+  padding: 10px 14px 6px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ececec;
+}
+
+/* ===== Category Product Grid ===== */
+.catProductGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 10px;
+}
+
+.catProductCard {
+  cursor: pointer;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  background: #fff;
+  transition: box-shadow 0.15s;
+}
+
+.catProductCard:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.catProductImg {
+  width: 100%;
+  aspect-ratio: 1;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.catProductBrand {
+  font-size: 10px;
+  color: #888;
+  font-weight: 700;
+  padding: 4px 6px 0;
+  text-transform: uppercase;
+}
+
+.catProductName {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  line-height: 1.3;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.catProductPrice {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 3px 6px 6px;
+}
+
+.catProductDiscount {
+  color: #e65c00;
+  font-size: 11px;
+  margin-right: 3px;
+}
+
+/* ===== 하위 카테고리 그리드 ===== */
+.subCatHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px 8px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.subCatTitle {
+  font-size: 14px;
+  font-weight: 800;
+  color: #111;
+}
+
+.subCatCount {
+  font-size: 12px;
+  color: #888;
+}
+
+.subCatGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 10px 10px;
+}
+
+.subCatCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 4px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.12s;
+  background: transparent;
+}
+
+.subCatCard:hover {
+  background: #f5f5f5;
+}
+
+.subCatIcon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.subCatIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.subCatName {
+  font-size: 11px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+
+/* ===== 브레드크럼 ===== */
+.catBreadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 12px;
+}
+
+.catBreadcrumbBack {
+  color: #555;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.catBreadcrumbBack:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.catBreadcrumbSep {
+  color: #bbb;
+}
+
+.catBreadcrumbCurrent {
+  color: #000;
+  font-weight: 800;
+}
+
+.brandItemLogoImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  padding: 4px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.brandItemPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #666;
+  background: #f7f7f7;
+}
+
+.brandError {
+  padding: 12px 20px;
+  font-size: 13px;
+  color: #c62828;
+  background: #fff5f5;
+  border-bottom: 1px solid #f0d6d6;
+}
+
+.brandHelpText {
+  padding: 10px 20px;
+  font-size: 12px;
+  color: #888;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.brandLoading {
+  padding: 32px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+}
+
+.brandLoadingMore {
+  padding: 14px 20px 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+}
+
+.brandLoadMoreSentinel {
+  width: 100%;
+  height: 1px;
+}

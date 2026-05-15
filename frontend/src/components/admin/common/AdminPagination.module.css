@@ -1,0 +1,73 @@
+/**
+ * wrapper
+ * - 공통 페이징 바깥 래퍼
+ */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/**
+ * info
+ * - 총 건수 / 표시 범위 텍스트
+ */
+.info {
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+/**
+ * buttons
+ * - 페이지 버튼 묶음
+ */
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+/**
+ * button
+ * - 공통 페이지 버튼
+ */
+.button {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #111827;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.button:hover:not(:disabled) {
+    background: #f9fafb;
+    color: #111827;
+}
+
+.button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/**
+ * buttonActive
+ * - 현재 페이지 버튼
+ */
+.buttonActive {
+    border-color: #111827;
+    background: #111827;
+    color: #ffffff;
+}

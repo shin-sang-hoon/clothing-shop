@@ -1,0 +1,82 @@
+/* ===== Shop Filter Bar ===== */
+.shopFilterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.shopFilterTag {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #000;
+  color: #fff;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.shopFilterRemove {
+  cursor: pointer;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.shopFilterRemove:hover {
+  opacity: 1;
+}
+
+.shopFilterClear {
+  font-size: 12px;
+  color: #888;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+.shopFilterClear:hover {
+  color: #000;
+}
+
+/* ===== Shop Page ===== */
+.shopPage {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.shopToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.shopCount {
+  font-size: 13px;
+  color: #888;
+}
+
+.shopSort {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 13px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.shopProductGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .shopProductGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

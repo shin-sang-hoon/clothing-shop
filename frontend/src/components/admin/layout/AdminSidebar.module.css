@@ -1,0 +1,126 @@
+.sidebar {
+    display: flex;
+    width: 260px;
+    flex-shrink: 0;
+    background: #0f172a;
+    border-right: 1px solid #dbe2ea;
+    overflow: hidden;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    width: 52px;
+    flex-shrink: 0;
+    background: #f8f9fa;
+    border-right: 1px solid #dbe2ea;
+    padding: 0.5rem 0;
+}
+
+.iconButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 48px;
+    color: #94a3b8;
+    background: transparent;
+    border: none;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+    transition:
+        background 0.15s,
+        color 0.15s;
+}
+
+.iconButton:hover {
+    background: #f3f6fa;
+    color: #1f2937;
+}
+
+.iconButtonActive {
+    background: rgba(13, 110, 253, 0.1);
+    color: #2563eb;
+    border-left-color: #2563eb;
+}
+
+.iconSvg {
+    width: 22px;
+    height: 22px;
+}
+
+.nav {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow-y: auto;
+    background: #ffffff;
+    border-left: 1px solid #dbe2ea;
+}
+
+.panel {
+    display: none;
+    flex: 1;
+    padding: 0.5rem 0;
+}
+
+.panelVisible {
+    display: flex;
+    flex-direction: column;
+}
+
+.panelTitle {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #111827;
+    border-bottom: 1px solid #dbe2ea;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.menu,
+.submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.submenu {
+    padding-top: 0.25rem;
+}
+
+.link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #475569;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition:
+        background 0.15s,
+        color 0.15s,
+        border-color 0.15s;
+}
+
+.submenu .link {
+    padding: 0.4rem 1rem 0.4rem 1.25rem;
+}
+
+.link:hover {
+    background: #f3f6fa;
+    color: #111827;
+}
+
+.linkActive {
+    background: rgba(13, 110, 253, 0.1);
+    color: #2563eb;
+    border-left-color: #2563eb;
+}
+
+
+.sidebarCollapsed {
+    display: none;
+}

@@ -1,0 +1,413 @@
+.authPage {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+}
+
+.authBox {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    padding: 44px 40px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+}
+
+.authLogo {
+    display: block;
+    width: 100%;
+    margin-bottom: 28px;
+    font-size: 26px;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: -1px;
+    cursor: pointer;
+}
+
+.authTitle {
+    margin-bottom: 24px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.authFormGroup {
+    margin-bottom: 14px;
+}
+
+.authLabel {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+}
+
+.authInput {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.authInput:focus {
+    border-color: #000;
+}
+
+/**
+ * 로그인 유지 체크 영역
+ */
+.authOptionRow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 2px;
+    margin-bottom: 14px;
+}
+
+.rememberLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    user-select: none;
+}
+
+.rememberCheckbox {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.authSubmitBtn {
+    width: 100%;
+    margin-top: 6px;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: #000;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.authSubmitBtn:hover {
+    background: #333;
+}
+
+.authSubmitBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.authLinks {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.authLinkButton {
+    font-size: 13px;
+    color: #888;
+}
+
+.authLinkButton:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.authTextLink {
+    font-size: 13px;
+    color: #888;
+}
+
+.authTextLink:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+/**
+ * 소셜 로그인 영역
+ */
+.socialSection {
+    margin-top: 28px;
+}
+
+.socialDivider {
+    position: relative;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.socialDivider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #e5e5e5;
+    transform: translateY(-50%);
+}
+
+.socialDividerText {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0 12px;
+    background: #fff;
+    font-size: 12px;
+    color: #888;
+}
+
+.socialButtonGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.socialButton {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+
+.googleButton {
+    background: #fff;
+    color: #222;
+}
+
+.googleButton:hover {
+    background: #f8f8f8;
+}
+
+.kakaoButton {
+    background: #fee500;
+    color: #191919;
+    border-color: #fee500;
+}
+
+.kakaoButton:hover {
+    background: #f2d900;
+}
+
+.naverButton {
+    background: #03c75a;
+    color: #fff;
+    border-color: #03c75a;
+}
+
+.naverButton:hover {
+    background: #02b351;
+}
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.modalBox {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.16);
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.modalTitle {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111;
+}
+
+.modalCloseButton {
+    border: none;
+    background: none;
+    font-size: 24px;
+    line-height: 1;
+    color: #666;
+    cursor: pointer;
+}
+
+.modalCloseButton:hover {
+    color: #111;
+}
+
+.modalBody {
+    padding: 20px;
+}
+
+.resultBox {
+    margin-bottom: 16px;
+    padding: 14px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.resultLabel {
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: #777;
+}
+
+.resultValue {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+}
+
+/* =========================
+   비밀번호 찾기 / 아이디 찾기 공통 입력 상태
+   ========================= */
+.authInputDisabled {
+    background: #f5f5f5;
+    color: #777;
+    cursor: not-allowed;
+}
+
+/* =========================
+   모달 내부 가로 버튼 묶음
+   ========================= */
+.modalActionRow {
+    display: flex;
+    gap: 8px;
+}
+
+.modalActionRow>button {
+    flex-shrink: 0;
+}
+
+/* =========================
+   인증번호 전송 / 확인 버튼
+   - 검정 계열 메인 액션
+   ========================= */
+.authVerifyBtn {
+    min-width: 108px;
+    padding: 12px 14px;
+    margin-top: 8px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    background: #000;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.authVerifyBtn:hover:not(:disabled) {
+    background: #222;
+    border-color: #222;
+}
+
+.authVerifyBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* =========================
+   이메일 변경 버튼
+   - 보조 액션
+   ========================= */
+.authChangeBtn {
+    min-width: 108px;
+    margin-top: 8px;
+    padding: 12px 14px;
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+    background: #fff;
+    color: #333;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.authChangeBtn:hover {
+    background: #f7f7f7;
+    border-color: #999;
+    color: #111;
+}
+
+/* =========================
+   최종 제출 버튼
+   - 비밀번호 변경 / 아이디 찾기 등
+   ========================= */
+.modalSubmitBtn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: #000;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.modalSubmitBtn:hover:not(:disabled) {
+    background: #222;
+}
+
+.modalSubmitBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* =========================
+   안내 문구
+   ========================= */
+.modalGuideText {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666;
+}
+
+.modalSuccessText {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #16a34a;
+}
+
+.modalErrorText {
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #dc2626;
+}

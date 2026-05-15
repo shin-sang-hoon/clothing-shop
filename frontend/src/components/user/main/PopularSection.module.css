@@ -1,0 +1,123 @@
+.popularSection {
+  padding: 20px 0 28px;
+  background: #f7f7f7;
+}
+
+.popularInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.popularHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 14px;
+}
+
+.popularTitle {
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.popularLiveDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e65c00;
+  display: inline-block;
+  animation: blink 1.2s infinite;
+}
+
+.popularMore {
+  font-size: 13px;
+  color: #888;
+  cursor: pointer;
+}
+
+.popularScrollOuter {
+  position: relative;
+  padding: 8px 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.popularArrow {
+  position: relative;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #333;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 1;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.popularArrow:hover {
+  border-color: #000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.popularArrowLeft::before {
+  content: "‹";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 24px;
+  line-height: 1;
+  transform: translate(-55%, -50%);
+}
+
+.popularArrowRight::before {
+  content: "›";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 24px;
+  line-height: 1;
+  transform: translate(-45%, -50%);
+}
+
+.popularScrollWrap {
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex: 1;
+}
+
+.popularScrollWrap::-webkit-scrollbar {
+  display: none;
+}
+
+.popularScroll {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  padding: 0 2px 4px;
+}
+
+.popularCardItem {
+  width: 190px;
+  flex-shrink: 0;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}

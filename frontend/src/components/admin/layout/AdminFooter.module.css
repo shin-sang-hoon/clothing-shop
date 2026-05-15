@@ -1,0 +1,16 @@
+.footer {
+    padding: 0.75rem 1.5rem;
+    border-top: 1px solid #dbe2ea;
+    background: #ffffff;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.copy {
+    margin: 0;
+}

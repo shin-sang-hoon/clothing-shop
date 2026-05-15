@@ -1,0 +1,551 @@
+[
+  {
+    "question": "뭐 먹을까?",
+    "reason": "TF-IDF 점수 미달",
+    "count": 1,
+    "first_seen": "2026-03-23 12:27",
+    "last_seen": "2026-03-23 12:27",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "보증금 내놔",
+    "reason": "감정/불만 표현",
+    "count": 2,
+    "first_seen": "2026-03-23 13:09",
+    "last_seen": "2026-03-23 15:08",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "ㄹㄹ",
+    "reason": "TF-IDF 점수 미달",
+    "count": 1,
+    "first_seen": "2026-03-23 15:05",
+    "last_seen": "2026-03-23 15:05",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "스킨케어 추천좀 해줘",
+    "reason": "TF-IDF 점수 미달",
+    "count": 1,
+    "first_seen": "2026-03-24 12:32",
+    "last_seen": "2026-03-24 12:32",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "스킨케어",
+    "reason": "TF-IDF 점수 미달",
+    "count": 1,
+    "first_seen": "2026-03-24 12:32",
+    "last_seen": "2026-03-24 12:32",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "카테고리",
+    "reason": "TF-IDF 점수 미달",
+    "count": 1,
+    "first_seen": "2026-03-24 12:32",
+    "last_seen": "2026-03-24 12:32",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "날씨 추천해줘",
+    "reason": "TF-IDF 점수 미달",
+    "count": 1,
+    "first_seen": "2026-03-24 15:55",
+    "last_seen": "2026-03-24 15:55",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "라면 먹고 싶어",
+    "reason": "TF-IDF 점수 미달",
+    "count": 3,
+    "first_seen": "2026-03-24 17:58",
+    "last_seen": "2026-03-24 18:10",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "ㅇㅇㅇ",
+    "reason": "TF-IDF 점수 미달",
+    "count": 6,
+    "first_seen": "2026-03-24 17:58",
+    "last_seen": "2026-03-25 16:28",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "이상한 질문은 롤백으로 가려고 하는데 가지냐?",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-24 18:12",
+    "last_seen": "2026-03-24 18:12",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "여기 술은 안팔죠?",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-24 18:12",
+    "last_seen": "2026-03-24 18:12",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "상품에 대해 문의 하고 싶은데?",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-24 18:13",
+    "last_seen": "2026-03-24 18:13",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "상담원 연결",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-24 19:42",
+    "last_seen": "2026-03-24 19:42",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "ㅐㅐㅐ",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-24 19:46",
+    "last_seen": "2026-03-24 19:46",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": ";;",
+    "reason": "서비스 키워드 없음",
+    "count": 3,
+    "first_seen": "2026-03-24 19:55",
+    "last_seen": "2026-03-25 21:03",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "회원탈퇴는 어떻게 하나요?",
+    "reason": "TF-IDF 점수 미달",
+    "count": 1,
+    "first_seen": "2026-03-24 19:55",
+    "last_seen": "2026-03-24 19:55",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "ㅣㅣ",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-24 19:59",
+    "last_seen": "2026-03-24 19:59",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "하이",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-24 20:12",
+    "last_seen": "2026-03-24 20:12",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "젤-1130 - 크림:베니모퍼플",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-24 20:21",
+    "last_seen": "2026-03-24 20:21",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "포폴라",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-24 20:22",
+    "last_seen": "2026-03-24 20:22",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "운동화",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-24 20:23",
+    "last_seen": "2026-03-24 20:23",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "프로스펙스",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-24 20:24",
+    "last_seen": "2026-03-24 20:24",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "로우킥",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-24 20:24",
+    "last_seen": "2026-03-24 20:24",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "싸다구",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-24 20:24",
+    "last_seen": "2026-03-24 20:24",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "배송",
+    "reason": "KoBERT 유사도 낮음(0.868)",
+    "count": 1,
+    "first_seen": "2026-03-25 10:21",
+    "last_seen": "2026-03-25 10:21",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "반납",
+    "reason": "KoBERT 유사도 낮음(0.839)",
+    "count": 1,
+    "first_seen": "2026-03-25 10:21",
+    "last_seen": "2026-03-25 10:21",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "fQA",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-25 11:24",
+    "last_seen": "2026-03-25 11:24",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "dd",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-25 11:24",
+    "last_seen": "2026-03-25 11:24",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "챗봇은 무엇을 도와주나요?",
+    "reason": "서비스 키워드 없음",
+    "count": 5,
+    "first_seen": "2026-03-25 11:28",
+    "last_seen": "2026-03-25 11:30",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "f",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-25 11:29",
+    "last_seen": "2026-03-25 11:29",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "ㅍㅍㅍ",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-25 11:41",
+    "last_seen": "2026-03-25 11:41",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "ㅈㅈ",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-25 11:41",
+    "last_seen": "2026-03-25 11:41",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "faq",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-25 11:47",
+    "last_seen": "2026-03-25 11:47",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "상품이 설명과 달라요",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-25 11:49",
+    "last_seen": "2026-03-25 11:49",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "질문",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-25 15:14",
+    "last_seen": "2026-03-25 15:14",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "문의사항",
+    "reason": "서비스 키워드 없음",
+    "count": 3,
+    "first_seen": "2026-03-25 15:30",
+    "last_seen": "2026-03-25 15:52",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "상담",
+    "reason": "KoBERT 유사도 낮음(0.847)",
+    "count": 1,
+    "first_seen": "2026-03-25 15:37",
+    "last_seen": "2026-03-25 15:37",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "경매",
+    "reason": "KoBERT 유사도 낮음(0.852)",
+    "count": 1,
+    "first_seen": "2026-03-25 15:42",
+    "last_seen": "2026-03-25 15:42",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "이상한데?",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-25 15:42",
+    "last_seen": "2026-03-25 15:42",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "ㅇㅇ",
+    "reason": "서비스 키워드 없음",
+    "count": 6,
+    "first_seen": "2026-03-25 16:28",
+    "last_seen": "2026-03-25 19:00",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "메뉴창",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-25 16:28",
+    "last_seen": "2026-03-25 16:28",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "ㅣㅣㅣ",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-25 17:42",
+    "last_seen": "2026-03-25 17:42",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "상담원",
+    "reason": "KoBERT 유사도 낮음(0.860)",
+    "count": 1,
+    "first_seen": "2026-03-25 17:49",
+    "last_seen": "2026-03-25 17:49",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "연결해줘",
+    "reason": "서비스 키워드 없음",
+    "count": 2,
+    "first_seen": "2026-03-25 17:49",
+    "last_seen": "2026-03-25 17:52",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "배고파",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-25 18:57",
+    "last_seen": "2026-03-25 18:57",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "운영시간",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-25 19:30",
+    "last_seen": "2026-03-25 19:30",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "신용카드로 결제되?",
+    "reason": "TF-IDF 점수 미달",
+    "count": 1,
+    "first_seen": "2026-03-25 20:24",
+    "last_seen": "2026-03-25 20:24",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "체크카드로 결제되?",
+    "reason": "TF-IDF 점수 미달",
+    "count": 1,
+    "first_seen": "2026-03-25 20:25",
+    "last_seen": "2026-03-25 20:25",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "간편결제로 결제되?",
+    "reason": "TF-IDF 점수 미달",
+    "count": 1,
+    "first_seen": "2026-03-25 20:25",
+    "last_seen": "2026-03-25 20:25",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "예쁜거 없어?",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-25 20:57",
+    "last_seen": "2026-03-25 20:57",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "취소 문의",
+    "reason": "KoBERT 유사도 낮음(0.869)",
+    "count": 1,
+    "first_seen": "2026-03-25 21:04",
+    "last_seen": "2026-03-25 21:04",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "주문 문의",
+    "reason": "KoBERT 유사도 낮음(0.867)",
+    "count": 1,
+    "first_seen": "2026-03-25 21:14",
+    "last_seen": "2026-03-25 21:14",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "회원 문의",
+    "reason": "KoBERT 유사도 낮음(0.858)",
+    "count": 2,
+    "first_seen": "2026-03-25 21:18",
+    "last_seen": "2026-03-25 21:22",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "아로로로",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-27 09:25",
+    "last_seen": "2026-03-27 09:25",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "얼마야?",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-27 09:25",
+    "last_seen": "2026-03-27 09:25",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "랜더스",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-27 09:25",
+    "last_seen": "2026-03-27 09:25",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "바이에른",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-27 09:26",
+    "last_seen": "2026-03-27 09:26",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "바보",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-27 09:26",
+    "last_seen": "2026-03-27 09:26",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "연결",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-27 09:26",
+    "last_seen": "2026-03-27 09:26",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "송회",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-27 09:26",
+    "last_seen": "2026-03-27 09:26",
+    "category": "",
+    "answer": ""
+  },
+  {
+    "question": "소포츠",
+    "reason": "서비스 키워드 없음",
+    "count": 1,
+    "first_seen": "2026-03-27 09:26",
+    "last_seen": "2026-03-27 09:26",
+    "category": "",
+    "answer": ""
+  }
+]

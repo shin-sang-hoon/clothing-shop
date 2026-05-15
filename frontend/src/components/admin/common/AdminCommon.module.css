@@ -1,0 +1,354 @@
+/**
+ * commonPage
+ * - 관리자 페이지 기본 세로 레이아웃
+ * - 카드와 카드 사이 간격을 확보한다.
+ */
+.commonPage {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/**
+ * pageHeader
+ * - 페이지 상단 제목/액션 영역
+ */
+.pageHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/**
+ * titleWrap 계열
+ * - 제목 + 설명을 세로로 정렬한다.
+ * - 기존 pageTitleWrap / 현재 titleWrap 둘 다 호환되도록 묶어둔다.
+ */
+.titleWrap,
+.pageTitleWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+/**
+ * pageTitle
+ * - 페이지 최상단 큰 제목
+ */
+.pageTitle {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.2;
+}
+
+/**
+ * pageDescription
+ * - 페이지 설명 문구
+ */
+.pageDescription {
+    margin: 0;
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/**
+ * actions 계열
+ * - 카드 헤더 우측 액션, 페이지 액션 공통 정렬
+ * - 기존 pageActions / 현재 actions / 예전 cardExtra 모두 호환
+ */
+.actions,
+.cardExtra,
+.pageActions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/**
+ * card
+ * - 관리자 공통 카드
+ * - 카드 자체 여백감이 느껴지도록 radius / shadow / border 보정
+ */
+.card {
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+/**
+ * header 계열
+ * - 현재 AdminCard.tsx는 styles.header 사용
+ * - 예전 코드와의 호환을 위해 .cardHeader도 같이 묶는다.
+ */
+.header,
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+/**
+ * title 계열
+ * - 카드 제목 스타일
+ * - 현재 AdminCard.tsx는 styles.title 사용
+ * - 예전 cardTitle도 같이 묶어둔다.
+ */
+.title,
+.cardTitle {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.3;
+}
+
+/**
+ * body 계열
+ * - 카드 내부 본문 여백의 핵심
+ * - 지금 답답해 보이는 문제를 가장 크게 해결하는 부분
+ */
+.body,
+.cardBody {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/**
+ * tabs
+ * - 관리자 탭 버튼 묶음
+ */
+.tabs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/**
+ * tabButton
+ * - 기본 탭 버튼
+ */
+.tabButton {
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #374151;
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+/**
+ * tabButtonActive
+ * - 활성 탭 버튼
+ */
+.tabButtonActive {
+    border-color: #111827;
+    background: #111827;
+    color: #ffffff;
+}
+
+/**
+ * filterBar
+ * - 검색 조건 / 필터 컨트롤 행
+ */
+.filterBar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/**
+ * tableWrap
+ * - 테이블 바깥 래퍼
+ * - 테이블 자체가 카드 내부에서 한 번 더 정리되도록 border/radius 추가
+ */
+.tableWrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #eef2f7;
+    border-radius: 14px;
+    background: #ffffff;
+}
+
+/**
+ * table
+ * - 관리자 공통 테이블
+ */
+.table {
+    width: 100%;
+    min-width: 960px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+}
+
+/**
+ * table th / td
+ * - 셀 padding을 조금 키워서 답답한 느낌을 줄인다.
+ */
+.table th,
+.table td {
+    padding: 16px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #111827;
+    background: #ffffff;
+}
+
+/**
+ * 첫 번째 / 마지막 셀은 좌우 여백을 조금 더 준다.
+ * - 이메일 컬럼이 너무 붙어 보이는 문제 완화
+ */
+.table th:first-child,
+.table td:first-child {
+    padding-left: 20px;
+}
+
+.table th:last-child,
+.table td:last-child {
+    padding-right: 20px;
+}
+
+/**
+ * table th
+ * - 헤더 배경
+ */
+.table th {
+    background: #f9fafb;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/**
+ * 마지막 행은 밑줄 제거
+ */
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/**
+ * hover
+ * - 행에 살짝 반응을 줘서 가독성 향상
+ */
+.table tbody tr:hover td {
+    background: #fcfdff;
+}
+
+/**
+ * emptyBox
+ * - 데이터 없음 공통 UI
+ */
+.emptyBox {
+    border: 1px dashed #d1d5db;
+    border-radius: 14px;
+    background: #f9fafb;
+    padding: 40px 20px;
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/**
+ * cardControlGroup
+ * - 카드 헤더 우측 공통 도구 영역
+ */
+.cardControlGroup {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/**
+ * cardControlLabel
+ * - 카드 헤더 우측 라벨
+ */
+.cardControlLabel {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+/**
+ * cardControlSelect
+ * - 카드 헤더 우측 셀렉트 공통 스타일
+ */
+.cardControlSelect {
+    min-width: 96px;
+    height: 38px;
+    padding: 0 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #111827;
+    font-size: 13px;
+    font-weight: 600;
+    outline: none;
+}
+
+/**
+ * focus 상태
+ */
+.cardControlSelect:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/**
+ * 반응형 보정
+ * - 작은 화면에서는 padding을 약간 줄인다.
+ */
+@media (max-width: 768px) {
+
+    .header,
+    .cardHeader {
+        padding: 16px 18px;
+    }
+
+    .body,
+    .cardBody {
+        padding: 18px;
+        gap: 16px;
+    }
+
+    .table th,
+    .table td {
+        padding: 14px 12px;
+    }
+
+    .table th:first-child,
+    .table td:first-child {
+        padding-left: 16px;
+    }
+
+    .table th:last-child,
+    .table td:last-child {
+        padding-right: 16px;
+    }
+}

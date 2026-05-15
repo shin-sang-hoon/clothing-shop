@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무림 상담봇</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #1a1a1a; font-family: 'Apple SD Gothic Neo', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .chat-container { width: 390px; height: 720px; background: #1a1a1a; display: flex; flex-direction: column; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .chat-header { background: #1a1a1a; padding: 16px 20px; border-bottom: 1px solid #2a2a2a; display: flex; align-items: center; gap: 12px; }
+        .avatar { width: 44px; height: 44px; background: #333; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .header-info h2 { color: #fff; font-size: 15px; }
+        .header-info p { color: #aaa; font-size: 12px; }
+        .header-info p.checking { color: #888; }
+        .header-info p.online { color: #4CAF50; }
+        .header-info p.offline { color: #E57373; }
+        .status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+        .status-dot.online { background: #4CAF50; animation: pulse 2s infinite; }
+        .status-dot.offline { background: #f44336; animation: none; }
+        .status-dot.checking { background: #888; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+        .quick-buttons { display: flex; gap: 8px; padding: 10px 16px; overflow-x: auto; background: #1a1a1a; scrollbar-width: none; border-bottom: 1px solid #2a2a2a; }
+        .quick-buttons::-webkit-scrollbar { display: none; }
+        .quick-btn { background: transparent; border: 1px solid #444; color: #ccc; padding: 6px 14px; border-radius: 20px; font-size: 12px; cursor: pointer; white-space: nowrap; transition: all 0.2s; }
+        .quick-btn:hover { background: #333; color: #fff; }
+        .chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; background: #f5f5f5; scrollbar-width: thin; scrollbar-color: #ddd transparent; }
+        .chat-messages::-webkit-scrollbar { width: 4px; }
+        .chat-messages::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+        .message { display: flex; flex-direction: column; max-width: 75%; animation: fadeUp 0.25s ease; }
+        .message.bot-rich { max-width: 92%; }
+        .message.bot:has(.category-buttons.clothing-choice) { max-width: 96%; }
+        .message.bot:has(.category-buttons.clothing-choice) .bubble { padding-left: 9px; padding-right: 9px; }
+        @keyframes fadeUp { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+        .message.bot { align-self: flex-start; }
+        .message.user { align-self: flex-end; }
+        .bubble { padding: 10px 14px; border-radius: 18px; font-size: 14px; line-height: 1.6; word-break: keep-all; }
+        .bot .bubble { background: #ffffff; color: #1a1a1a; border-bottom-left-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+        .user .bubble { background: #1a1a1a; color: #fff; border-bottom-right-radius: 4px; }
+        .time { font-size: 10px; color: #aaa; margin-top: 4px; }
+        .bot .time { align-self: flex-start; }
+        .user .time { align-self: flex-end; }
+        .category-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+        .category-buttons.clothing-choice { flex-wrap: wrap; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee; }
+        .category-buttons.clothing-choice .cat-btn { flex: 1 1 calc(50% - 4px); min-width: calc(50% - 4px); display: inline-flex; align-items: center; justify-content: center; padding: 10px 6px; border-radius: 20px; border: 1.5px solid #ddd; font-size: 12px; font-weight: 500; text-align: center; white-space: nowrap; }
+        .category-buttons.clothing-choice .cat-btn:hover { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+        .category-buttons.product-choice { flex-wrap: wrap; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee; }
+        .category-buttons.product-choice .cat-btn { flex: 1 1 calc(33% - 6px); min-width: calc(33% - 6px); display: inline-flex; align-items: center; justify-content: center; padding: 9px 4px; border-radius: 10px; border: 1.5px solid #ddd; font-size: 11px; font-weight: 600; text-align: center; white-space: nowrap; }
+        .category-buttons.product-choice .cat-btn:hover { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+        .cat-btn { padding: 7px 14px; border-radius: 20px; border: 1.5px solid #ddd; background: #fff; color: #333; cursor: pointer; font-size: 12px; transition: all 0.2s; font-family: 'Apple SD Gothic Neo', sans-serif; }
+        .cat-btn:hover { background: #f0f0f0; border-color: #aaa; }
+        .agent-btn { border-color: #E8593C; color: #E8593C; background: #fff; }
+        .agent-btn:hover { background: #E8593C; color: #fff; }
+        .loading { display: flex; gap: 4px; padding: 10px 14px; background: #fff; border-radius: 18px; border-bottom-left-radius: 4px; width: fit-content; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+        .loading span { width: 6px; height: 6px; background: #bbb; border-radius: 50%; animation: bounce 1s infinite; }
+        .loading span:nth-child(2) { animation-delay: 0.2s; }
+        .loading span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+        .chat-input { padding: 12px 16px; background: #1a1a1a; border-top: 1px solid #2a2a2a; display: flex; gap: 8px; }
+        .chat-input input { flex: 1; background: #2a2a2a; border: none; border-radius: 24px; padding: 10px 16px; color: #fff; font-size: 14px; outline: none; font-family: 'Apple SD Gothic Neo', sans-serif; }
+        .chat-input input::placeholder { color: #666; }
+        .send-btn { width: 40px; height: 40px; background: #fff; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+        .send-btn:hover { background: #e0e0e0; transform: scale(1.05); }
+        .send-btn svg { fill: #1a1a1a; width: 16px; height: 16px; }
+        /* 쇼핑 추천 상품 카드 (챗봇 HTML 응답) */
+        .shop-reply-intro { font-size: 14px; font-weight: 600; color: #1a1a1a; margin: 0 0 10px 0; line-height: 1.5; }
+        .shop-reply-intro.weather-intro { font-weight: 500; }
+        .shop-reply-intro.weather-intro strong { font-weight: 700; }
+        .shop-section-title { font-size: 12px; font-weight: 600; color: #444; margin: 10px 0 6px 0; line-height: 1.4; }
+        .shop-product-cards { display: flex; flex-direction: column; gap: 10px; margin-top: 2px; width: 100%; max-width: 100%; }
+        .shop-product-card { display: flex; gap: 10px; align-items: flex-start; background: #fafafa; border-radius: 12px; padding: 10px; border: 1px solid #eee; }
+        .shop-product-card .shop-thumb-link { flex-shrink: 0; display: block; line-height: 0; }
+        .shop-product-card img { width: 72px; height: 72px; object-fit: cover; border-radius: 8px; background: #e8e8e8; display: block; }
+        .shop-product-card .shop-no-img { width: 72px; height: 72px; border-radius: 8px; background: #e8e8e8; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+        .shop-product-card .meta { flex: 1; min-width: 0; }
+        .shop-product-card .name { font-size: 13px; font-weight: 600; color: #1a1a1a; line-height: 1.45; margin-bottom: 8px; word-break: break-word; }
+        .shop-product-card a.detail-link { font-size: 12px; color: #1565C0; text-decoration: underline; font-weight: 500; }
+        .shop-product-card a.detail-link:hover { color: #0D47A1; }
+    </style>
+</head>
+<body>
+<div class="chat-container">
+    <div class="chat-header">
+        <div class="avatar">🛒</div>
+        <div class="header-info">
+            <h2>무림 상담봇</h2>
+            <p id="header-status" class="checking"><span id="status-dot" class="status-dot checking"></span><span id="status-label">확인 중…</span> · <span id="avg-response-label">평균 응답시간 —</span></p>
+        </div>
+    </div>
+    <div class="quick-buttons">
+        <button class="quick-btn" onclick="sendQuery('상품 문의를 하고 싶어요')">상품 문의</button>
+        <button class="quick-btn" onclick="sendQuery('렌탈 신청은 어떻게 하나요?')">렌탈 신청</button>
+        <button class="quick-btn" onclick="sendQuery('경매 참여하려면 어떻게 해요?')">경매 참여</button>
+        <button class="quick-btn" onclick="sendQuery('배송은 얼마나 걸려요?')">배송 문의</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+        <div class="message bot">
+            <div class="bubble">안녕하세요! 무림 상담봇<br>"무림이"입니다 😊<br>상품 문의, 렌탈 신청, 경매 참여, 배송 문의 등<br>무엇이든 질문해 주세요!</div>
+            <span class="time" id="init-time"></span>
+        </div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="user-input" placeholder="질문을 입력하세요..." onkeypress="if(event.key==='Enter') sendMessage()">
+        <button class="send-btn" onclick="sendMessage()">
+            <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+        </button>
+    </div>
+</div>
+<script>
+    const MAX_RT_SAMPLES = 30;
+    let responseTimeSamples = [];
+
+    function setServerOnline(online) {
+        const p = document.getElementById('header-status');
+        const dot = document.getElementById('status-dot');
+        const label = document.getElementById('status-label');
+        if (!p || !dot || !label) return;
+        p.classList.remove('checking', 'online', 'offline');
+        dot.classList.remove('checking', 'online', 'offline');
+        if (online) {
+            p.classList.add('online');
+            dot.classList.add('online');
+            label.textContent = '온라인';
+        } else {
+            p.classList.add('offline');
+            dot.classList.add('offline');
+            label.textContent = '오프라인';
+        }
+    }
+
+    function updateAvgResponseLabel() {
+        const el = document.getElementById('avg-response-label');
+        if (!el) return;
+        if (responseTimeSamples.length === 0) {
+            el.textContent = '평균 응답시간 —';
+            return;
+        }
+        const sum = responseTimeSamples.reduce((a, b) => a + b, 0);
+        const avg = sum / responseTimeSamples.length;
+        el.textContent = '평균 응답시간 ' + (avg / 1000).toFixed(1) + '초';
+    }
+
+    function recordChatResponseTime(ms) {
+        responseTimeSamples.push(ms);
+        if (responseTimeSamples.length > MAX_RT_SAMPLES) responseTimeSamples.shift();
+        updateAvgResponseLabel();
+    }
+
+    async function pingHealth() {
+        try {
+            const res = await fetch('/health', { method: 'GET', cache: 'no-store' });
+            if (!res.ok) throw new Error('bad status');
+            await res.json();
+            setServerOnline(true);
+            return true;
+        } catch (e) {
+            setServerOnline(false);
+            return false;
+        }
+    }
+
+    pingHealth();
+    setInterval(pingHealth, 30000);
+
+    document.getElementById('init-time').textContent = new Date().toLocaleTimeString('ko-KR', {hour:'2-digit', minute:'2-digit'});
+    document.getElementById('chat-messages').addEventListener('click', function(e) {
+        const btn = e.target.closest('button[data-chat-query]');
+        if (!btn) return;
+        e.preventDefault();
+        const raw = btn.getAttribute('data-chat-query');
+        if (raw == null || raw === '') return;
+        try {
+            const query = decodeURIComponent(raw);
+            document.getElementById('user-input').value = query;
+            sendMessage();
+        } catch (err) { console.error(err); }
+    });
+    function getTime() { return new Date().toLocaleTimeString('ko-KR', {hour:'2-digit', minute:'2-digit'}); }
+    function escapeHtml(s) {
+        const d = document.createElement('div');
+        d.textContent = s;
+        return d.innerHTML;
+    }
+    function renderButtons(buttons, buttonStyle) {
+        if (!buttons || buttons.length === 0) return '';
+        const wrapClass = buttonStyle === 'clothing-choice'
+            ? 'category-buttons clothing-choice'
+            : buttonStyle === 'product-choice'
+            ? 'category-buttons product-choice'
+            : 'category-buttons';
+        let html = '<div class="' + wrapClass + '">';
+        buttons.forEach(btn => {
+            if (btn.query === 'AGENT') {
+                html += `<button type="button" class="cat-btn agent-btn" onclick="connectAgent()">📞 상담원 연결</button>`;
+            } else {
+                const enc = encodeURIComponent(btn.query);
+                html += `<button type="button" class="cat-btn" data-chat-query="${enc}">${escapeHtml(btn.label)}</button>`;
+            }
+        });
+        html += '</div>';
+        return html;
+    }
+    function addMessage(role, content, buttons = [], format = 'text', buttonStyle = '') {
+        const messages = document.getElementById('chat-messages');
+        const div = document.createElement('div');
+        div.className = `message ${role}`;
+        if (role === 'bot' && format === 'html') div.classList.add('bot-rich');
+        let bubbleInner;
+        if (role === 'bot' && format === 'html') {
+            bubbleInner = content + renderButtons(buttons, buttonStyle);
+        } else {
+            bubbleInner = escapeHtml(String(content)).replace(/\n/g, '<br>') + renderButtons(buttons, buttonStyle);
+        }
+        div.innerHTML = `<div class="bubble">${bubbleInner}</div><span class="time">${getTime()}</span>`;
+        messages.appendChild(div);
+        messages.scrollTop = messages.scrollHeight;
+    }
+    function showLoading() {
+        const messages = document.getElementById('chat-messages');
+        const div = document.createElement('div');
+        div.className = 'message bot'; div.id = 'loading';
+        div.innerHTML = '<div class="loading"><span></span><span></span><span></span></div>';
+        messages.appendChild(div); messages.scrollTop = messages.scrollHeight;
+    }
+    function hideLoading() { const el = document.getElementById('loading'); if (el) el.remove(); }
+    function sendQuery(query) { document.getElementById('user-input').value = query; sendMessage(); }
+    function connectAgent() { addMessage('bot', '상담원 연결 중입니다... 📞\n운영시간: 평일 09:00 ~ 18:00\n전화: 1588-0000', [], 'text'); }
+    function showAccountMenu() {
+        const buttons = [
+            { label: '🔑 로그인/비밀번호', query: '로그인이 안 돼요' },
+            { label: '📝 회원가입 방법', query: '회원가입은 어떻게 하나요?' },
+            { label: '💰 포인트 사용', query: '포인트 어떻게 써요?' },
+            { label: '🎁 쿠폰 사용', query: '쿠폰은 어떻게 사용하나요?' },
+            { label: '👤 회원정보 변경', query: '회원정보를 변경하고 싶어요' },
+            { label: '❌ 회원탈퇴', query: '회원탈퇴는 어떻게 하나요?' },
+        ];
+        addMessage('bot', '회원/계정 관련 문의입니다.\n아래에서 선택해 주세요 😊', buttons, 'text', '');
+    }
+    function showRefundMenu() {
+        const buttons = [
+            { label: '🛍️ 상품 환불/취소', query: '상품 환불 취소 방법' },
+            { label: '📦 렌탈 취소/반납', query: '렌탈 취소 반납 방법' },
+            { label: '🔨 경매 환불/취소', query: '경매 환불 가능한가요?' },
+        ];
+        addMessage('bot', '환불/취소 문의입니다.\n어떤 항목에 대한 문의인가요? 😊', buttons, 'text', '');
+    }
+    const AGENT_KEYWORDS = ['상담원', '상담원 연결', '상담원연결', '사람 연결', '사람연결', '직원 연결', '직원연결', 'AGENT'];
+    const ACCOUNT_KEYWORDS = ['회원/계정', '회원 계정', '계정 문의', '회원 문의'];
+    const REFUND_KEYWORDS = ['환불/취소', '환불취소', '환불 취소 문의'];
+    const PRODUCT_REFUND_KEYWORDS = ['상품 환불 취소 방법', '상품 환불', '상품 취소'];
+    const RENTAL_REFUND_KEYWORDS = ['렌탈 취소 반납 방법', '렌탈 취소', '렌탈 반납', '반납 방법', '렌탈 해지'];
+    const PROFILE_KEYWORDS = ['회원정보를 변경하고 싶어요', '회원정보 변경', '회원정보 수정', '개인정보 변경', '개인정보 수정'];
+    const WITHDRAW_KEYWORDS = ['회원탈퇴는 어떻게 하나요', '회원탈퇴', '탈퇴 방법', '탈퇴하고 싶어요'];
+
+    // 제품명+액션 감지: 메시지에 환불/반품 키워드가 있으면 경매 관련이 아닌 한 상품환불로 안내
+    function hasRefundAction(msg) {
+        return (msg.includes('환불') || msg.includes('반품')) && !msg.includes('경매');
+    }
+    // 렌탈+취소/반납 조합 감지
+    function hasRentalCancelAction(msg) {
+        return msg.includes('렌탈') && (msg.includes('취소') || msg.includes('반납') || msg.includes('해지'));
+    }
+
+    async function sendMessage() {
+        const input = document.getElementById('user-input');
+        const message = input.value.trim();
+        if (!message) return;
+        addMessage('user', message, [], 'text'); input.value = '';
+        // 상담원 연결
+        if (AGENT_KEYWORDS.some(kw => message.includes(kw))) { connectAgent(); return; }
+        // 회원/계정 메뉴
+        if (ACCOUNT_KEYWORDS.some(kw => message.includes(kw))) { showAccountMenu(); return; }
+        // 환불/취소 메뉴 (단독)
+        if (REFUND_KEYWORDS.some(kw => message.includes(kw))) { showRefundMenu(); return; }
+        // 렌탈 + 취소/반납 조합 (제품명과 함께 와도 처리)
+        if (hasRentalCancelAction(message) || RENTAL_REFUND_KEYWORDS.some(kw => message.includes(kw))) {
+            addMessage('bot', '렌탈 취소/반납 안내드립니다 😊\n\n[렌탈 취소]\n① 렌탈 시작 전: 마이페이지 → [렌탈내역] → 취소 신청\n② 렌탈 진행 중: 취소 불가, 계약 기간 종료 후 반납 가능\n\n[렌탈 반납]\n① 렌탈 종료일 3일 전까지 반납 신청\n② 마이페이지 → [렌탈내역] → [반납 신청] 클릭\n③ 택배 수거 또는 직접 반납 선택\n\n⚠️ 반납 지연 시 연체료가 발생할 수 있습니다.\n\n추가 문의는 고객센터(1588-0000)로 연락 주세요 📞', [], 'text'); return;
+        }
+        // 환불/반품 키워드 포함 (제품명과 함께 와도 처리)
+        if (hasRefundAction(message) || PRODUCT_REFUND_KEYWORDS.some(kw => message.includes(kw))) {
+            addMessage('bot', '상품 환불/취소 안내드립니다 😊\n\n① 마이페이지 → [주문내역] 클릭\n② 취소할 주문 선택 → [취소/환불 신청] 클릭\n③ 사유 선택 후 신청 완료\n\n✅ 배송 전: 즉시 취소 가능\n✅ 배송 후: 상품 수령일로부터 7일 이내 반품 신청\n⚠️ 단순 변심의 경우 반품 배송비(편도 3,000원)가 발생합니다.\n\n추가 문의는 고객센터(1588-0000)로 연락 주세요 📞', [], 'text'); return;
+        }
+        // 회원정보 변경
+        if (PROFILE_KEYWORDS.some(kw => message.includes(kw))) {
+            addMessage('bot', '회원정보 변경 방법 안내드립니다 😊\n\n① 홈페이지 로그인 후 우측 상단 [마이페이지] 클릭\n② [회원정보 수정] 메뉴 선택\n③ 이름, 연락처, 주소 등 원하시는 정보 수정 후 저장\n\n비밀번호 변경도 동일 메뉴에서 가능합니다.\n추가 문의사항은 고객센터(1588-0000)로 연락 주세요 📞', [], 'text'); return;
+        }
+        // 회원탈퇴
+        if (WITHDRAW_KEYWORDS.some(kw => message.includes(kw))) {
+            addMessage('bot', '회원탈퇴 안내드립니다 😊\n\n① 홈페이지 로그인 후 [마이페이지] 클릭\n② [회원정보 수정] → 하단 [회원탈퇴] 버튼 클릭\n③ 탈퇴 사유 선택 후 확인\n\n⚠️ 탈퇴 시 보유 포인트·쿠폰은 즉시 소멸되며\n진행 중인 렌탈·경매 건이 있을 경우 탈퇴가 제한될 수 있습니다.\n추가 문의는 고객센터(1588-0000)로 연락 주세요 📞', [], 'text'); return;
+        }
+        showLoading();
+        const tChat0 = performance.now();
+        try {
+            const res = await fetch('/chat', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({message}) });
+            const elapsed = performance.now() - tChat0;
+            const data = await res.json();
+            hideLoading();
+            if (res.ok) recordChatResponseTime(elapsed);
+            const fmt = data.answer_format === 'html' ? 'html' : 'text';
+            addMessage('bot', data.answer, data.buttons || [], fmt, data.button_style || '');
+        } catch (e) {
+            hideLoading();
+            addMessage('bot', '오류가 발생했습니다. 다시 시도해 주세요.', [], 'text', '');
+            pingHealth();
+        }
+    }
+</script>
+</body>
+</html>

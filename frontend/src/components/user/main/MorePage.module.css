@@ -1,0 +1,264 @@
+/* ===== 더보기 페이지 공통 스타일 ===== */
+
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 36px 20px 60px;
+}
+
+/* 페이지 헤더 */
+.pageHeader {
+  margin-bottom: 28px;
+}
+
+.pageTitleWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.pageTitle {
+  font-size: 26px;
+  font-weight: 900;
+  color: #111;
+}
+
+.liveDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e65c00;
+  flex-shrink: 0;
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.25); }
+}
+
+.pageDesc {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.6;
+}
+
+/* 필터 바 */
+.filterBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.categoryTabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.categoryTab {
+  padding: 7px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.categoryTab:hover {
+  border-color: #000;
+  color: #000;
+}
+
+.categoryTabActive {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.sortSelect {
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  background: #fff;
+  min-width: 110px;
+}
+
+.resultCount {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+/* 상품 그리드 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+
+/* 상품 카드 */
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  background: #fff;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cardImgWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.rankBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.cardImg {
+  font-size: 64px;
+}
+
+.heartBtn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #eee;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  transition: color 0.15s;
+}
+
+.heartBtn:hover {
+  color: #e65c00;
+}
+
+.cardBody {
+  padding: 10px 12px 14px;
+}
+
+.cardBrand {
+  font-size: 11px;
+  color: #888;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.cardName {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #111;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 6px;
+}
+
+.cardPriceRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.cardDiscount {
+  font-size: 13px;
+  font-weight: 800;
+  color: #e65c00;
+}
+
+.cardPrice {
+  font-size: 14px;
+  font-weight: 800;
+  color: #111;
+}
+
+.cardOriginal {
+  font-size: 12px;
+  color: #bbb;
+  text-decoration: line-through;
+}
+
+.cardLikes {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+/* 브레드크럼 */
+.breadcrumbLink {
+  font-size: 14px;
+  color: #888;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.breadcrumbLink:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.breadcrumbSep {
+  font-size: 13px;
+  color: #ccc;
+}
+
+/* 빈 상태 */
+.emptyMsg {
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 15px;
+  color: #bbb;
+}

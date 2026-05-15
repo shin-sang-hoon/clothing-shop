@@ -1,0 +1,104 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import FavoriteButton from "@/components/common/FavoriteButton";
+import { apiGetHomeRecommendItems, type ShopItemResponse } from "@/shared/api/itemApi";
+import { resolveUrl } from "@/shared/config/env";
+import { dummyLikeBase } from "@/shared/utils/dummyLike";
+import styles from "@/components/user/main/MorePage.module.css";
+import { useItemLikes } from "@/shared/hooks/useLikes";
+
+const SORT_OPTIONS = ["추천순", "인기순", "최신순", "가격낮은순", "가격높은순"];
+
+export default function RecommendMorePage() {
+  const navigate = useNavigate();
+  const [items, setItems] = useState<ShopItemResponse[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [sortBy, setSortBy] = useState("추천순");
+  const { isLikedById, likeById, unlikeById } = useItemLikes();
+
+  useEffect(() => {
+    apiGetHomeRecommendItems({ size: 200 })
+      .then((rows) => setItems(rows))
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, []);
+
+  const sorted = [...items].sort((a, b) => {
+    if (sortBy === "추천순") return b.id - a.id;
+    if (sortBy === "인기순") return (b.likeCnt ?? 0) - (a.likeCnt ?? 0);
+    if (sortBy === "최신순") return b.id - a.id;
+    if (sortBy === "가격낮은순") return (a.retailPrice ?? 0) - (b.retailPrice ?? 0);
+    return (b.retailPrice ?? 0) - (a.retailPrice ?? 0);
+  });
+
+  return (
+    <div className={styles.page}>
+      <div className={styles.pageHeader}>
+        <div className={styles.pageTitleWrap}>
+          <h1 className={styles.pageTitle}>추천 아이템</h1>
+        </div>
+        <p className={styles.pageDesc}>최근 활동과 선호를 바탕으로 추천한 상품입니다.</p>
+      </div>
+
+      <div className={styles.filterBar}>
+        <div className={styles.categoryTabs} />
+        <select className={styles.sortSelect} value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+          {SORT_OPTIONS.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <p className={styles.resultCount}>총 {sorted.length}개</p>
+
+      {loading ? (
+        <p style={{ textAlign: "center", padding: "40px", color: "#888" }}>불러오는 중...</p>
+      ) : (
+        <div className={styles.grid}>
+          {sorted.map((product) => (
+            <div
+              key={product.id}
+              className={styles.card}
+              role="button"
+              tabIndex={0}
+              onClick={() => navigate(`/product/${product.id}`)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") navigate(`/product/${product.id}`);
+              }}
+            >
+              <div className={styles.cardImgWrap}>
+                {product.img ? (
+                  <img
+                    src={resolveUrl(product.img)}
+                    alt={product.name}
+                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                  />
+                ) : (
+                  <span className={styles.cardImg}>이미지 없음</span>
+                )}
+                <FavoriteButton
+                  liked={isLikedById(product.id)}
+                  onLike={() => likeById(product.id)}
+                  onUnlike={() => unlikeById(product.id)}
+                  className={styles.heartBtn}
+                  ariaLabel={`${product.name} 좋아요`}
+                  unlikeMessage={`${product.name} 좋아요를 취소하시겠습니까?`}
+                />
+              </div>
+              <div className={styles.cardBody}>
+                <div className={styles.cardBrand}>{product.brand}</div>
+                <div className={styles.cardName}>{product.name}</div>
+                <div className={styles.cardPriceRow}>
+                  <span className={styles.cardPrice}>{(product.retailPrice ?? 0).toLocaleString()}원</span>
+                </div>
+                <div className={styles.cardLikes}>관심 {dummyLikeBase(product.id) + (product.likeCnt ?? 0)}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}

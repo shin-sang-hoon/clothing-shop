@@ -1,0 +1,50 @@
+.recommendSection {
+  padding: 32px 0;
+  border-bottom: 4px solid #f5f5f5;
+}
+
+.recommendInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 14px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.sectionMore {
+  font-size: 13px;
+  color: #888;
+  cursor: pointer;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1100px) {
+  .productGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .recommendInner {
+    padding: 0 12px;
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

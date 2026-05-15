@@ -1,0 +1,737 @@
+/* ── 페이지 레이아웃 ─────────────────────────────────────── */
+.page {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    max-width: 1080px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+}
+
+/* ── 좌측 사이드바 ──────────────────────────────────────── */
+.sidebar {
+    width: 180px;
+    flex-shrink: 0;
+}
+
+.sidebarTitle {
+    font-size: 20px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 24px;
+}
+
+.menuGroup {
+    margin-bottom: 24px;
+}
+
+.menuGroupLabel {
+    font-size: 13px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.menuItem {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 6px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #6b7280;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: color 0.12s, background 0.12s;
+}
+
+.menuItem:hover {
+    color: #111827;
+    background: #f9fafb;
+}
+
+.menuItemActive {
+    color: #111827;
+    font-weight: 700;
+}
+
+/* ── 우측 메인 ──────────────────────────────────────────── */
+.main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ── 프로필 카드 ─────────────────────────────────────────── */
+.profileCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 28px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #fff;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.profileCardLeft {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatarMd {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+    color: #374151;
+    flex-shrink: 0;
+}
+
+.profileCardName {
+    font-size: 17px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.profileCardEmail {
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 3px;
+}
+
+.profileCardBtns {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.profileCardBtn {
+    height: 36px;
+    padding: 0 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.profileCardBtn:hover {
+    border-color: #6b7280;
+    background: #f9fafb;
+}
+
+.profileCardBtnPrimary {
+    height: 36px;
+    padding: 0 16px;
+    border: 1px solid #111827;
+    border-radius: 8px;
+    background: #111827;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.profileCardBtnPrimary:hover {
+    background: #374151;
+    border-color: #374151;
+}
+
+/* ── 숏컷 아이콘 행 ─────────────────────────────────────── */
+.shortcutRow {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.shortcut {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px 8px;
+    background: none;
+    border: none;
+    border-right: 1px solid #f3f4f6;
+    cursor: pointer;
+    transition: background 0.12s;
+}
+
+.shortcut:last-child {
+    border-right: none;
+}
+
+.shortcut:hover {
+    background: #f9fafb;
+}
+
+.shortcutIcon {
+    font-size: 22px;
+}
+
+.shortcutLabel {
+    font-size: 11px;
+    font-weight: 600;
+    color: #374151;
+    white-space: nowrap;
+}
+
+/* ── 콘텐츠 영역 ─────────────────────────────────────────── */
+.contentArea {
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #fff;
+    padding: 28px;
+}
+
+.sectionTitle {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 20px;
+}
+
+/* ── sub-tab ─────────────────────────────────────────────── */
+.subTabs {
+    display: flex;
+    gap: 8px;
+    padding: 4px;
+    background: #f3f4f6;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.subTab {
+    flex: 1;
+    padding: 9px 0;
+    background: none;
+    border: none;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: color 0.15s, background 0.15s, box-shadow 0.15s;
+    white-space: nowrap;
+}
+
+.subTab:hover {
+    color: #374151;
+    background: rgba(255,255,255,0.6);
+}
+
+.subTabActive {
+    background: #fff;
+    color: #111827;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.10), 0 0 0 0.5px rgba(0,0,0,0.06);
+    font-weight: 700;
+}
+
+/* ── 아이템 리스트 ───────────────────────────────────────── */
+.itemList {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.itemRow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.itemRow:last-child {
+    border-bottom: none;
+}
+
+.itemThumb {
+    width: 80px;
+    height: 80px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.itemInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.itemBrand {
+    font-size: 12px;
+    color: #9ca3af;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.itemName {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.itemMeta {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 4px;
+}
+
+.itemRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.itemPrice {
+    font-size: 15px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.itemHeartBtn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #ef4444;
+    cursor: pointer;
+    padding: 2px 4px;
+    line-height: 1;
+    transition: transform 0.15s;
+}
+
+.itemHeartBtn:hover {
+    transform: scale(1.2);
+}
+
+.unlikeBtn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+    opacity: 0.85;
+    transition: opacity 0.15s, transform 0.15s;
+}
+
+.unlikeBtn:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* ── 상태 배지 ───────────────────────────────────────────── */
+.statusBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    padding: 0 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.statusBlue  { background: #eff6ff; color: #1d4ed8; }
+.statusGreen { background: #ecfdf5; color: #047857; }
+.statusGray  { background: #f3f4f6; color: #6b7280; }
+.statusRed   { background: #fef2f2; color: #b91c1c; }
+
+/* ── 별점 ────────────────────────────────────────────────── */
+.stars {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+/* ── 리뷰 작성 버튼 ──────────────────────────────────────── */
+.reviewBtn {
+    height: 34px;
+    padding: 0 16px;
+    border: 1px solid #111827;
+    border-radius: 8px;
+    background: #111827;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.reviewBtn:hover {
+    background: #374151;
+}
+
+/* ── 포인트/쿠폰 ─────────────────────────────────────────── */
+.pointBig {
+    font-size: 32px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.infoDesc {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* ── 빈 상태 ─────────────────────────────────────────────── */
+.empty {
+    padding: 32px 0;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+/* ── 정보 카드 (로그인 정보 / 프로필) ────────────────────── */
+.infoCard {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.infoRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.infoLabel {
+    width: 140px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #374151;
+    flex-shrink: 0;
+    padding-top: 10px;
+}
+
+.infoValueRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.infoValue {
+    font-size: 14px;
+    color: #111827;
+    padding: 8px 0;
+}
+
+.infoInput {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    color: #111827;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.infoInput:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.infoTextarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    color: #111827;
+    outline: none;
+    resize: vertical;
+    font-family: inherit;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+.infoTextarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.editBlock {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.editBtns {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.editBtn {
+    height: 32px;
+    padding: 0 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    background: #fff;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s ease;
+    flex-shrink: 0;
+}
+
+.editBtn:hover {
+    border-color: #6b7280;
+    background: #f9fafb;
+}
+
+.saveBtnSm {
+    height: 34px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 8px;
+    background: #111827;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.saveBtnSm:hover {
+    background: #374151;
+}
+
+.cancelBtnSm {
+    height: 34px;
+    padding: 0 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.cancelBtnSm:hover {
+    background: #f9fafb;
+}
+
+.errorMsg {
+    font-size: 12px;
+    color: #ef4444;
+    font-weight: 500;
+}
+
+.saveBtn {
+    height: 42px;
+    padding: 0 28px;
+    border: none;
+    border-radius: 10px;
+    background: #111827;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.saveBtn:hover {
+    background: #374151;
+}
+
+/* ── 프로필 관리 ─────────────────────────────────────────── */
+.avatarRow {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.avatarLarge {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.avatarImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatarPlaceholder {
+    font-size: 28px;
+    font-weight: 800;
+    color: #374151;
+}
+
+.uploadBtn {
+    display: inline-flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.uploadBtn:hover {
+    border-color: #6b7280;
+    background: #f9fafb;
+}
+
+.profileGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.profileField {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* ── 반응형 ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .page {
+        flex-direction: column;
+        margin: 20px auto;
+        gap: 20px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .menuGroup {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .menuGroupLabel {
+        width: 100%;
+    }
+
+    .menuItem {
+        width: auto;
+        padding: 6px 12px;
+        border: 1px solid #e5e7eb;
+        border-radius: 999px;
+        font-size: 13px;
+    }
+
+    .menuItemActive {
+        background: #111827;
+        color: #fff;
+        border-color: #111827;
+    }
+
+    .shortcutRow {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .shortcut:nth-child(3) {
+        border-right: none;
+    }
+
+    .shortcut:nth-child(4),
+    .shortcut:nth-child(5),
+    .shortcut:nth-child(6) {
+        border-top: 1px solid #f3f4f6;
+    }
+
+    .profileGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .infoRow {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .infoLabel {
+        width: auto;
+        padding-top: 0;
+    }
+}
+
+.cancelBidBtn {
+  margin-top: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ef4444;
+  background: #fff;
+  border: 1px solid #ef4444;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cancelBidBtn:hover {
+  background: #ef4444;
+  color: #fff;
+}
+
+.cancelBidBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

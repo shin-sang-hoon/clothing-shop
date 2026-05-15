@@ -1,0 +1,210 @@
+/* ── 래퍼 ───────────────────────────────────────────────── */
+.wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* ── 트리거 인풋 ─────────────────────────────────────────── */
+.trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    user-select: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.trigger:hover {
+    border-color: #9ca3af;
+}
+
+.triggerOpen {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.triggerValue {
+    font-size: 14px;
+    color: #111827;
+}
+
+.triggerPlaceholder {
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+.calIcon {
+    width: 16px;
+    height: 16px;
+    color: #9ca3af;
+    flex-shrink: 0;
+}
+
+/* ── 달력 드롭다운 ──────────────────────────────────────── */
+.calendar {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 500;
+    width: 300px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 16px;
+    user-select: none;
+}
+
+/* ── 달력 헤더 ──────────────────────────────────────────── */
+.calHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.calTitle {
+    font-size: 15px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.navBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    background: none;
+    color: #6b7280;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+}
+
+.navBtn:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+/* ── 요일 헤더 ──────────────────────────────────────────── */
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 6px;
+}
+
+.weekday {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #9ca3af;
+    padding: 4px 0;
+}
+
+.sun { color: #ef4444; }
+.sat { color: #3b82f6; }
+
+/* ── 날짜 그리드 ─────────────────────────────────────────── */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #111827;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+}
+
+.day:hover:not(:disabled) {
+    background: #f3f4f6;
+}
+
+/* 이전/다음 달 날짜 */
+.dayOther {
+    color: #d1d5db;
+    cursor: default;
+}
+
+/* 오늘 */
+.dayToday {
+    border: 1.5px solid #2563eb;
+    color: #2563eb;
+    font-weight: 700;
+}
+
+/* 선택된 날짜 */
+.daySelected {
+    background: #2563eb !important;
+    color: #fff !important;
+    font-weight: 700;
+}
+
+.daySelected:hover {
+    background: #1d4ed8 !important;
+}
+
+/* 일/토 색상 */
+.daySun { color: #ef4444; }
+.daySat { color: #3b82f6; }
+
+/* ── 푸터 ────────────────────────────────────────────────── */
+.calFooter {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.todayBtn {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2563eb;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.12s;
+}
+
+.todayBtn:hover {
+    background: #eff6ff;
+}
+
+.clearBtn {
+    font-size: 12px;
+    font-weight: 600;
+    color: #9ca3af;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.12s, color 0.12s;
+}
+
+.clearBtn:hover {
+    background: #f3f4f6;
+    color: #6b7280;
+}

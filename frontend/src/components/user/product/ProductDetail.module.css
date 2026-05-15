@@ -1,0 +1,989 @@
+/* ===== Product Detail ===== */
+.detailPage {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px 60px;
+}
+
+
+.detailLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+@media (max-width: 768px) {
+  .detailLayout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.detailGallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.detailMainImg {
+  width: 100%;
+  aspect-ratio: 1;
+  max-height: 500px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 130px;
+  overflow: hidden;
+}
+
+.detailSubImgs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.detailSubImg {
+  flex: 0 0 80px;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+
+.detailSubImgActive {
+  border-color: #000;
+}
+
+.detailSubImg:hover:not(.detailSubImgActive) {
+  border-color: #bbb;
+}
+
+.detailInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* BOTH 아이템: 입찰/렌탈 페이지 토글 */
+.modeToggle {
+  display: flex;
+  gap: 0;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.modeToggleBtn {
+  flex: 1;
+  padding: 10px 0;
+  background: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.modeToggleBtn + .modeToggleBtn {
+  border-left: 1.5px solid #e5e7eb;
+}
+
+.modeToggleBtnActive {
+  background: #111827;
+  color: #fff;
+}
+
+.detailBrandName {
+  font-size: 13px;
+  color: #888;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* 상품명 + 하트 행 */
+.detailNameRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.detailName {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* 상품명 옆 하트 + 수 묶음 */
+.detailNameLikeWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* 상품명 옆 하트 버튼 */
+.detailNameLikeBtn {
+  font-size: 22px;
+  color: #bbb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.detailNameLikeBtn:hover {
+  color: #e65c00;
+}
+
+/* 하트 아래 좋아요 수 */
+.detailNameLikeCnt {
+  font-size: 11px;
+  color: #9ca3af;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.detailPriceWrap {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.detailDiscount {
+  font-size: 26px;
+  font-weight: 900;
+  color: #e65c00;
+}
+
+.detailPrice {
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.detailPriceOriginal {
+  font-size: 16px;
+  color: #bbb;
+  text-decoration: line-through;
+}
+
+.detailDivider {
+  height: 1px;
+  background: #f0f0f0;
+}
+
+.detailSizeTitle {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.detailSizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detailSizeBtn {
+  padding: 9px 18px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #fff;
+}
+
+.detailSizeBtnActive {
+  border-color: #000;
+  background: #000;
+  color: #fff;
+}
+
+.detailSizeBtn:hover:not(.detailSizeBtnActive) {
+  border-color: #999;
+}
+
+.detailActions {
+  display: flex;
+  gap: 8px;
+}
+
+.detailBtnLike {
+  width: 52px;
+  height: 60px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.detailBtnCart {
+  flex: 1;
+  height: 52px;
+  border: 1.5px solid #000;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #fff;
+}
+
+.detailBtnBuy {
+  flex: 1;
+  height: 52px;
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.detailBtnBuy:hover {
+  background: #333;
+}
+
+/* ===== Brand Header on Detail ===== */
+.detailBrandHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0 18px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 24px;
+}
+
+.detailBrandAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.detailBrandHeaderInfo {
+  flex: 1;
+}
+
+.detailBrandHeaderName {
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.detailBrandHeaderSub {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* 브랜드명 옆 하트 버튼 */
+.detailBrandHeartBtn {
+  font-size: 18px;
+  color: #bbb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 0 0 8px;
+  vertical-align: middle;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.detailBrandHeartBtn:hover {
+  color: #e65c00;
+}
+
+/* ===== Instant Prices ===== */
+.detailInstantPrices {
+  display: flex;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.detailInstantItem {
+  flex: 1;
+  padding: 14px 16px;
+  text-align: center;
+}
+
+.detailInstantDivider {
+  width: 1px;
+  background: #eee;
+  align-self: stretch;
+}
+
+.detailInstantLabel {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.detailInstantVal {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.detailInstantValBuy {
+  color: #e65c00;
+}
+
+.detailInstantValSell {
+  color: #16a34a;
+}
+
+/* ===== Trade Action Buttons ===== */
+.detailTradeActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.detailBtnSell {
+  flex: 1;
+  padding: 14px 10px;
+  background: #16a34a;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.detailBtnSell:hover {
+  background: #15803d;
+}
+
+.detailBtnBuyNew {
+  flex: 1;
+  padding: 14px 10px;
+  background: #e65c00;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.detailBtnBuyNew:hover {
+  background: #c2410c;
+}
+
+.detailTradeBtnLabel {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.detailTradeBtnSub {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* ===== 상품 상세 설명 (에디터 콘텐츠 렌더) ===== */
+.descSection {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.descHeader {
+  margin-bottom: 28px;
+  border-bottom: 2px solid #111;
+  padding-bottom: 12px;
+}
+
+.descTitle {
+  font-size: 18px;
+  font-weight: 900;
+  color: #111;
+}
+
+.descEmpty {
+  padding: 40px 0;
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.descContent {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.descContent :global(img),
+.descContent :global(video),
+.descContent :global(canvas),
+.descContent :global(svg),
+.descContent :global(iframe) {
+  max-width: 100%;
+  height: auto;
+}
+
+.descContent :global(table) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* 에디터 콘텐츠 스타일 */
+.descContent :global(.pd-section) {
+  padding: 28px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.descContent :global(.pd-section:last-child) {
+  border-bottom: none;
+}
+
+.descContent :global(.pd-bg-gray) {
+  background: #f9f9f9;
+  padding: 24px 28px;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+.descContent :global(.pd-heading) {
+  font-size: 22px;
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.descContent :global(.pd-subheading) {
+  font-size: 15px;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.descContent :global(.pd-text) {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #444;
+}
+
+.descContent :global(.pd-list) {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.descContent :global(.pd-list li) {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.descContent :global(.pd-img-wrap) {
+  width: 100%;
+  background: #f5f5f5;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  margin: 16px 0;
+}
+
+.descContent :global(.pd-img-placeholder) {
+  font-size: 120px;
+  text-align: center;
+  padding: 40px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08));
+}
+
+.descContent :global(.pd-caption) {
+  font-size: 12px;
+  color: #bbb;
+  text-align: center;
+  padding: 8px 0;
+}
+
+/* ===== Trade Table ===== */
+.tradeSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.tradeTabsBar {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.tradeTabBtn {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.tradeTabBtnActive {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+.tradeTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.tradeTable thead {
+  background: #fafafa;
+}
+
+.tradeTable th {
+  padding: 9px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.tradeTable td {
+  padding: 9px 10px;
+  border-bottom: 1px solid #f5f5f5;
+  color: #333;
+}
+
+.tradePrice {
+  font-weight: 700;
+  color: #e65c00;
+}
+
+.tradePriceBuy {
+  font-weight: 700;
+  color: #16a34a;
+}
+
+.tradeDate {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.tradeMoreBtn {
+  width: 100%;
+  padding: 11px;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #fff;
+}
+
+.tradeMoreBtn:hover {
+  border-color: #000;
+}
+
+/* ===== Trade Drawer ===== */
+.tradeDrawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  max-width: 95vw;
+  background: #fff;
+  z-index: 700;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0 30px rgba(0, 0, 0, 0.15);
+}
+
+.tradeDrawerOpen {
+  transform: translateX(0);
+}
+
+.tradeDrawerHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.tradeDrawerClose {
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+.tradeDrawerTitle {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.tradeDrawerScroll {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.tradeDrawerProduct {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tradeDrawerProductImg {
+  width: 60px;
+  height: 60px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  flex-shrink: 0;
+}
+
+.tradeDrawerProductBrand {
+  font-size: 11px;
+  color: #888;
+  font-weight: 700;
+}
+
+.tradeDrawerProductName {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 2px 0;
+}
+
+.tradeDrawerProductId {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.tradeDrawerSection {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tradeDrawerSizeSelect {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.tradeDrawerPriceLabel {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.tradeChartRanges {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.tradeChartRangeBtn {
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tradeChartRangeBtnActive {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.tradeChartWrap {
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 6px;
+}
+
+.tradeChartMinmax {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #aaa;
+}
+
+.tradeDrawerTabs {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.tradeDrawerTab {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.tradeDrawerTabActive {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+.tradeDrawerFooter {
+  display: flex;
+  border-top: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.tradeInstantSellBtn,
+.tradeInstantBuyBtn {
+  flex: 1;
+  padding: 16px 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.tradeInstantSellBtn {
+  background: #16a34a;
+  color: #fff;
+}
+
+.tradeInstantSellBtn:hover {
+  background: #15803d;
+}
+
+.tradeInstantBuyBtn {
+  background: #e65c00;
+  color: #fff;
+}
+
+.tradeInstantBuyBtn:hover {
+  background: #c2410c;
+}
+
+.tradeInstantLabel {
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+.tradeInstantPrice {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+/* ===== Related / Recommended ===== */
+.detailRelatedSection {
+  margin-top: 40px;
+}
+
+.detailSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.detailSectionTitle {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.detailSectionMore {
+  font-size: 13px;
+  color: #888;
+  cursor: pointer;
+}
+
+.detailSectionMore:hover {
+  color: #000;
+}
+
+.detailRelatedScroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.detailRelatedScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.detailRelatedCard {
+  width: 160px;
+  min-width: 160px;
+  cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  transition: box-shadow 0.15s;
+}
+
+.detailRelatedCard:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.detailRelatedImg {
+  width: 100%;
+  aspect-ratio: 1;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52px;
+}
+
+.detailRelatedBrand {
+  font-size: 10px;
+  color: #888;
+  font-weight: 700;
+  padding: 6px 8px 2px;
+  text-transform: uppercase;
+}
+
+.detailRelatedName {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0 8px;
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.detailRelatedPrice {
+  font-size: 13px;
+  font-weight: 800;
+  padding: 4px 8px;
+}
+
+.detailRelatedDiscount {
+  color: #e65c00;
+  font-size: 12px;
+  margin-right: 3px;
+}
+
+.detailRelatedLikes {
+  font-size: 11px;
+  color: #aaa;
+  padding: 0 8px 8px;
+}
+
+/* ===== Review ===== */
+.detailReviewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.detailReviewTitle {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.reviewWriteBtn {
+  padding: 9px 18px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #fff;
+}
+
+.reviewWriteBtn:hover {
+  border-color: #000;
+}
+
+.reviewItem {
+  padding: 18px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.reviewItemTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.reviewStars {
+  color: #f5a623;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.reviewDate {
+  font-size: 12px;
+  color: #bbb;
+}
+
+.reviewUser {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.reviewText {
+  font-size: 14px;
+  line-height: 1.7;
+}

@@ -1,0 +1,334 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal {
+    background: #fff;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 560px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* 헤더 */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0;
+}
+
+.closeBtn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: #f3f4f6;
+    border-radius: 50%;
+    font-size: 13px;
+    cursor: pointer;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeBtn:hover {
+    background: #e5e7eb;
+    color: #111;
+}
+
+/* 스텝 인디케이터 */
+.steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 14px 20px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.stepItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 0 12px;
+    position: relative;
+}
+
+.stepItem:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    width: 24px;
+    height: 1px;
+    background: #d1d5db;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.stepCircle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #d1d5db;
+    color: #9ca3af;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    flex-shrink: 0;
+}
+
+.stepLabel {
+    font-size: 12px;
+    color: #9ca3af;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.stepActive .stepCircle {
+    border-color: #2563eb;
+    background: #2563eb;
+    color: #fff;
+}
+
+.stepActive .stepLabel {
+    color: #2563eb;
+}
+
+.stepDone .stepCircle {
+    border-color: #16a34a;
+    background: #16a34a;
+    color: #fff;
+}
+
+.stepDone .stepLabel {
+    color: #16a34a;
+}
+
+/* 본문 */
+.body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.stepDesc {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 16px;
+}
+
+.stepBack {
+    margin-bottom: 12px;
+}
+
+.backBtn {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2563eb;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.backBtn:hover {
+    text-decoration: underline;
+}
+
+/* 상위 카테고리 그리드 */
+.parentGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.parentBtn {
+    height: 52px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    color: #374151;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.parentBtn:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+.parentBtnActive {
+    border-color: #2563eb;
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+/* 하위 카테고리 그리드 */
+.catGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.catBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: 0.15s;
+    text-align: left;
+}
+
+.catBtn:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+.catBtnActive {
+    border-color: #2563eb;
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.catCount {
+    font-size: 11px;
+    font-weight: 700;
+    background: #e5e7eb;
+    color: #6b7280;
+    border-radius: 999px;
+    padding: 1px 7px;
+}
+
+/* 태그 속성 */
+.attrGroups {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.attrGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.attrGroupLabel {
+    font-size: 12px;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.attrChips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.attrChip {
+    height: 32px;
+    padding: 0 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 999px;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: 0.12s;
+}
+
+.attrChip:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+.attrChipActive {
+    border-color: #2563eb;
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+/* 하단 버튼 */
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 14px 20px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.cancelBtn {
+    height: 38px;
+    padding: 0 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+}
+
+.cancelBtn:hover {
+    background: #f3f4f6;
+}
+
+.nextBtn,
+.confirmBtn {
+    height: 38px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.12s;
+}
+
+.nextBtn:hover,
+.confirmBtn:hover {
+    background: #1d4ed8;
+}
+
+.nextBtn:disabled,
+.confirmBtn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}

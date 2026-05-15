@@ -1,0 +1,168 @@
+.page {
+  min-height: 60vh;
+}
+
+.banner {
+  background: #111;
+  color: #fff;
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.bannerTitle {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.bannerSub {
+  font-size: 15px;
+  color: #aaa;
+}
+
+.content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+/* 채팅 안내 */
+.chatSection {
+  margin-bottom: 56px;
+}
+
+.chatCard {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 28px 32px;
+}
+
+.chatIcon {
+  font-size: 36px;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.chatTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.chatDesc {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.9;
+  margin-bottom: 14px;
+}
+
+.chatMeta {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  color: #777;
+  line-height: 2;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 12px;
+}
+
+.chatMeta li::before {
+  content: "· ";
+}
+
+/* FAQ */
+.faqTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #111;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faqItem {
+  border-bottom: 1px solid #eee;
+}
+
+.faqQ {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.faqQ::-webkit-details-marker {
+  display: none;
+}
+
+.faqQ::after {
+  content: "+";
+  margin-left: auto;
+  font-size: 18px;
+  font-weight: 400;
+  color: #999;
+  flex-shrink: 0;
+}
+
+.faqItem[open] .faqQ::after {
+  content: "−";
+}
+
+.faqQIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.faqA {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 0 4px 18px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.faqAIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: #f0f0f0;
+  color: #555;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}

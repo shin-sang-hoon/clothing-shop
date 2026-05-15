@@ -1,0 +1,554 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.pageDesc {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.filterRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.searchInput {
+  height: 38px;
+  min-width: 240px;
+  flex: 1;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+}
+
+.searchInput:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.filterSelect {
+  height: 38px;
+  min-width: 120px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+}
+
+.filterSelect:focus {
+  border-color: #2563eb;
+}
+
+.primaryButton {
+  composes: buttonPrimary from "@/components/admin/common/AdminButton.module.css";
+}
+
+.secondaryButton {
+  composes: buttonSecondary from "@/components/admin/common/AdminButton.module.css";
+}
+
+.searchButton {
+  composes: buttonPrimary from "@/components/admin/common/AdminButton.module.css";
+}
+
+.resetButton {
+  composes: buttonSecondary from "@/components/admin/common/AdminButton.module.css";
+}
+
+.tableActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.detailActionButton {
+  composes: buttonPrimary from "@/components/admin/common/AdminButton.module.css";
+}
+
+.deleteButton {
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid #dc2626;
+  border-radius: 10px;
+  background: #fff;
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background: #dc2626;
+  color: #fff;
+}
+
+.inlineInput {
+  width: 100%;
+  min-width: 140px;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 13px;
+  color: #111827;
+  outline: none;
+}
+
+.inlineInput:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.inlineNumberInput {
+  width: 90px;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 13px;
+  color: #111827;
+  outline: none;
+}
+
+.inlineNumberInput:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.inlineSelect {
+  height: 34px;
+  min-width: 96px;
+  padding: 0 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 13px;
+  color: #111827;
+  outline: none;
+}
+
+.inlineSelect:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.readonlyText {
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.checkboxCell {
+  width: 44px;
+  text-align: center;
+}
+
+.idCell {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.dateCell {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.pagination {
+  margin-top: 4px;
+}
+
+.paginationInfo {
+  color: #4b5563;
+}
+
+.empty {
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+  padding: 32px 16px;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modalBox {
+  width: 100%;
+  max-width: 680px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+  overflow: hidden;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 22px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.closeButton {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.modalBody {
+  padding: 22px;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 18px 22px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.formStack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formRowTwo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.formLabel {
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.formInput,
+.formSelect {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 14px;
+  outline: none;
+}
+
+.formInput:focus,
+.formSelect:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.formTextarea {
+  width: 100%;
+  min-height: 96px;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 14px;
+  outline: none;
+  resize: vertical;
+}
+
+.formTextarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.formReadonlyBox {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.inputError {
+  border-color: #ef4444 !important;
+}
+
+.errorMsg {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.cancelButton {
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.saveButton {
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid #111827;
+  border-radius: 10px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tableHeaderTools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pageSizeLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.pageSizeSelect {
+  min-width: 88px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+}
+
+.actionButton {
+  composes: buttonSecondary from "@/components/admin/common/AdminButton.module.css";
+}
+
+.depthBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 64px;
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid #dbeafe;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.levelNavigator {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.levelNavigatorLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.breadcrumbWrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.breadcrumbNode {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.breadcrumbSeparator {
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.breadcrumbButton {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.breadcrumbButton:hover {
+  text-decoration: underline;
+}
+
+.navigatorInfoRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.navigatorInfoText {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.navigatorActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.levelTableHeaderTools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.levelSummaryText {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.levelEnterButton {
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.levelEnterButton:hover {
+  background: #eff6ff;
+}
+
+.levelEndText {
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  .pageHeader {
+    flex-direction: column;
+  }
+
+  .headerActions {
+    width: 100%;
+  }
+
+  .formRowTwo {
+    grid-template-columns: 1fr;
+  }
+
+  .levelNavigator {
+    flex-direction: column;
+  }
+
+  .navigatorActions {
+    width: 100%;
+  }
+}

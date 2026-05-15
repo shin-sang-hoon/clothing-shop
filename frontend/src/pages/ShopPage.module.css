@@ -1,0 +1,1071 @@
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 28px 60px 60px;
+}
+
+/* 브레드크럼 */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.breadLink {
+  font-size: 13px;
+  color: #888;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.breadLink:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.breadSep {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.breadCurrent {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* 키워드 검색 배너 */
+.keywordBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  background: #f0f4ff;
+  border: 1px solid #c7d7fb;
+  border-radius: 8px;
+}
+
+.keywordLabel {
+  font-size: 14px;
+  color: #1e3a8a;
+}
+
+.keywordLabel strong {
+  font-weight: 700;
+}
+
+.keywordClear {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.keywordClear:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* 상위 카테고리 탭 */
+.categoryRow {
+  display: flex;
+  gap: 0;
+  margin-bottom: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.categoryRow::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryTab {
+  padding: 10px 18px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
+  color: #888;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.categoryTab:hover {
+  color: #111;
+}
+
+.categoryTabActive {
+  color: #111;
+  border-bottom-color: #111;
+}
+
+/* 하위 카테고리(태그 그룹) 탭 */
+.subCategoryRow {
+  display: flex;
+  gap: 0;
+  padding: 10px 0 0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: #c7c7c7 #f3f4f6;
+}
+
+.subCategoryRow::-webkit-scrollbar {
+  height: 8px;
+}
+
+.subCategoryRow::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 999px;
+}
+
+.subCategoryRow::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 999px;
+}
+
+.subCategoryRow::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.subTab {
+  padding: 7px 16px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.12s, border-color 0.12s;
+}
+
+.subTab:hover {
+  color: #111;
+}
+
+.subTabActive {
+  color: #111;
+  border-bottom-color: #111;
+  font-weight: 800;
+}
+
+/* 필터 바 */
+.filterBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.filterBtns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.brandSearchWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.brandSearchInput {
+  height: 34px;
+  padding: 0 28px 0 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #111;
+  outline: none;
+  width: 130px;
+}
+
+.brandSearchInput:focus {
+  border-color: #111;
+}
+
+.brandSearchClear {
+  position: absolute;
+  right: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #888;
+  padding: 0;
+  line-height: 1;
+}
+
+.brandSearchClear:hover {
+  color: #111;
+}
+
+.filterRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* 팝업형 필터 버튼 (컬러, 패턴 등) */
+.filterBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: 0.12s;
+  white-space: nowrap;
+}
+
+.filterBtn:hover {
+  border-color: #111;
+  color: #111;
+}
+
+.filterBtnActive {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+.filterBtnActive:hover {
+  color: #fff;
+}
+
+.filterCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.filterBtnActive .filterCount {
+  background: rgba(255,255,255,0.25);
+}
+
+.filterArrow {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+/* 인라인 태그 버튼 (성별, 스타일 등) */
+.filterTagBtn {
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: 0.12s;
+}
+
+.filterTagBtn:hover {
+  border-color: #111;
+  color: #111;
+}
+
+.filterTagBtnActive {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+.filterTagBtnActive:hover {
+  color: #fff;
+}
+
+/* 초기화 버튼 */
+.clearBtn {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.clearBtn:hover {
+  color: #111;
+}
+
+/* 선택된 필터 칩 */
+.activeChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  padding: 8px 0;
+  margin-bottom: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 10px 0 12px;
+  background: #f3f4f6;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.chipRemove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #9ca3af;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.chipRemove:hover {
+  color: #374151;
+}
+
+.chipClearAll {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9ca3af;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 4px 8px;
+}
+
+/* 정렬만 있는 경우 */
+.sortOnlyRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.sortSelect {
+  padding: 7px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  background: #fff;
+  min-width: 110px;
+}
+
+.resultCount {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+/* 그리드 토글 행 */
+.gridControlRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 10px 0 12px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 12px;
+}
+
+.priceRangeRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.priceInput {
+  width: 110px;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  background: #fff;
+  color: #111;
+  outline: none;
+}
+
+.priceInput:focus {
+  border-color: #111;
+}
+
+.priceSep {
+  font-size: 13px;
+  color: #888;
+}
+
+.priceApplyBtn {
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid #111;
+  border-radius: 6px;
+  background: #111;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.priceApplyBtn:hover {
+  background: #333;
+}
+
+.gridToggleWrap {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.gridToggleBtn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: 0.12s;
+}
+
+.gridToggleBtn:hover:not(.gridToggleBtnActive) {
+  border-color: #111;
+  color: #111;
+}
+
+.gridToggleBtnActive {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+.gridIcon {
+  display: grid;
+  gap: 2px;
+  width: 14px;
+  height: 14px;
+}
+
+.gridIcon i {
+  display: block;
+  border-radius: 1px;
+  background: currentColor;
+}
+
+.gridIcon2 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.gridIcon4 {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+/* 브랜드 배너 (브랜드 선택 시 상품 목록 위에 표시) */
+.brandBanner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+}
+
+.brandBannerLogo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.brandBannerLogoPlaceholder {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.brandBannerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.brandBannerName {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+}
+
+.brandBannerNameEn {
+  font-size: 12px;
+  font-weight: 500;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.brandBannerLikeWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.brandBannerLikeBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid #e5e7eb;
+  background: #fff;
+  font-size: 18px;
+  color: #bbb;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.15s;
+}
+
+.brandBannerLikeBtn:hover {
+  border-color: #e05;
+  color: #e05;
+}
+
+.brandBannerLikeBtnActive {
+  border-color: #e05;
+  color: #e05;
+  background: #fff5f7;
+}
+
+.brandBannerLikeCnt {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e05;
+}
+
+/* 상품 그리드 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.grid2 {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+  .grid2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .grid2 { grid-template-columns: repeat(1, 1fr); }
+}
+
+/* 상품 카드 */
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  background: #fff;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.cardImgWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cardHoverOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 16px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.card:hover .cardHoverOverlay {
+  opacity: 1;
+}
+
+.cardHoverText {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.cardImg {
+  font-size: 64px;
+}
+
+.heartBtn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #eee;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  transition: color 0.15s;
+}
+
+.heartBtn:hover {
+  color: #e65c00;
+}
+
+.cardBody {
+  padding: 10px 12px 14px;
+}
+
+.cardBrand {
+  font-size: 11px;
+  color: #888;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.cardName {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #111;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 6px;
+}
+
+.cardPriceRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.cardDiscount {
+  font-size: 13px;
+  font-weight: 800;
+  color: #e65c00;
+}
+
+.cardPrice {
+  font-size: 14px;
+  font-weight: 800;
+  color: #111;
+}
+
+.cardLikes {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+.cardHeart {
+  color: #e53e3e;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.emptyMsg {
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 15px;
+  color: #bbb;
+}
+
+/* 더보기 버튼 */
+.loadMoreWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.loadMoreBtn {
+  height: 46px;
+  padding: 0 40px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.loadMoreBtn:hover {
+  border-color: #111;
+  color: #111;
+}
+
+/* ── 필터 팝업 ───────────────────────────────────────────── */
+.popupOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 900;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .popupOverlay {
+    align-items: center;
+  }
+}
+
+.popup {
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  width: 100%;
+  max-width: 480px;
+  max-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -4px 40px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .popup {
+    border-radius: 16px;
+    max-height: 70vh;
+  }
+}
+
+.popupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.popupTitle {
+  font-size: 16px;
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+}
+
+.popupClose {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: #f3f4f6;
+  border-radius: 50%;
+  font-size: 0;
+  font-weight: 700;
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupClose::before {
+  content: "X";
+  font-size: 13px;
+  line-height: 1;
+}
+
+.popupSearchWrap {
+  padding: 12px 20px 0;
+}
+
+.popupSearch {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.popupSearch:focus {
+  border-color: #111;
+}
+
+.popupBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+}
+
+.popupTagGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.popupTag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: 0.12s;
+}
+
+.popupTag:hover {
+  border-color: #111;
+}
+
+.popupTagActive {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+.popupCheck {
+  font-size: 12px;
+}
+
+.popupFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px 16px;
+  border-top: 1px solid #f0f0f0;
+  gap: 10px;
+}
+
+.popupReset {
+  font-size: 13px;
+  font-weight: 600;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.popupSelectAll {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.popupSelectAll:hover {
+  color: #111;
+}
+
+.popupConfirm {
+  flex: 1;
+  height: 44px;
+  border: none;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.popupConfirm:hover {
+  background: #333;
+}
+
+/* ── 브랜드 카드 그리드 ───────────────────────────────────── */
+.brandGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.brandCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 8px 8px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: 0.12s;
+  min-height: 70px;
+  justify-content: center;
+}
+
+.brandCard:hover {
+  border-color: #111;
+}
+
+.brandCardActive {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+.brandLogo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.brandCardActive .brandLogo {
+  filter: brightness(0) invert(1);
+}
+
+.brandLogoPlaceholder {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: #9ca3af;
+}
+
+.brandCardActive .brandLogoPlaceholder {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.brandCardName {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+  word-break: keep-all;
+}
+
+/* ── 속성 그룹 ───────────────────────────────────────────── */
+.attrGroup {
+  margin-bottom: 18px;
+}
+
+.attrGroup:last-child {
+  margin-bottom: 0;
+}
+
+.attrGroupTitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}

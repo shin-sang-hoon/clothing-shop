@@ -1,0 +1,622 @@
+/**
+ * page
+ * - 회원 관리 페이지 전체 영역
+ */
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/**
+ * topTabs
+ * - 상단 탭/액션 영역
+ */
+.topTabs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/**
+ * filterSection
+ * - 필터 섹션 전체 영역
+ */
+.filterSection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/**
+ * noticeBox
+ * - 안내 박스
+ */
+.noticeBox {
+    padding: 14px 16px;
+    border: 1px solid #fde68a;
+    border-radius: 14px;
+    background: #fffbeb;
+    color: #92400e;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/**
+ * input, select
+ * - 기본 입력 요소 스타일
+ */
+.input,
+.select {
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #111827;
+    font-size: 14px;
+}
+
+.input {
+    min-width: 260px;
+    flex: 1;
+}
+
+/**
+ * primaryButton
+ * - 기본 강조 버튼
+ */
+.primaryButton {
+    height: 40px;
+    padding: 0 14px;
+    border: 1px solid #111827;
+    border-radius: 10px;
+    background: #111827;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.primaryButton:hover {
+    opacity: 0.92;
+}
+
+/**
+ * secondaryButton
+ * - 보조 버튼
+ */
+.secondaryButton {
+    height: 38px;
+    padding: 0 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #111827;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.secondaryButton:hover {
+    background-color: #f9fafb;
+}
+
+/**
+ * topActionButton
+ * - 상단 회원 등록 버튼
+ */
+.topActionButton {
+    height: 38px;
+    padding: 0 16px;
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.topActionButton:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+/**
+ * searchButton
+ * - 검색 버튼
+ * - 페이징 대응용 검색 실행 버튼
+ */
+.searchButton {
+    height: 38px;
+    padding: 0 14px;
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.searchButton:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+/**
+ * rowActionButton
+ * - 테이블 행 단위 액션 버튼
+ */
+.rowActionButton {
+    height: 34px;
+    padding: 0 12px;
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.rowActionButton:hover {
+    background: #dbeafe;
+}
+
+/**
+ * searchRow
+ * - 검색 조건 행
+ */
+.searchRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/**
+ * searchSelect
+ * - 검색 조건 셀렉트
+ */
+.searchSelect {
+    min-width: 140px;
+    height: 38px;
+    padding: 0 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #111827;
+    outline: none;
+}
+
+.searchSelect:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/**
+ * searchInput
+ * - 검색어 입력창
+ */
+.searchInput {
+    min-width: 240px;
+    height: 38px;
+    padding: 0 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #111827;
+    outline: none;
+}
+
+.searchInput:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/**
+ * loadingText
+ * - 로딩 문구
+ */
+.loadingText {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/**
+ * checkColumn
+ * - 체크박스 컬럼 너비
+ * - 현재 안 써도 남겨둬도 무방
+ */
+.checkColumn {
+    width: 56px;
+}
+
+/**
+ * cellStack
+ * - 셀 내부 2줄 이상 세로 정렬
+ */
+.cellStack {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/**
+ * mutedText
+ * - 약한 텍스트
+ */
+.mutedText {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/**
+ * maskText
+ * - 휴대폰/민감 텍스트
+ */
+.maskText {
+    font-size: 13px;
+    color: #6b7280;
+    letter-spacing: 0.02em;
+}
+
+/**
+ * pointText
+ * - 포인트 텍스트
+ */
+.pointText {
+    font-weight: 700;
+    color: #111827;
+}
+
+/**
+ * inlineRadioText
+ * - 라디오처럼 보이는 여러 텍스트 그룹
+ */
+.inlineRadioText {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/**
+ * radioLike, radioLikeActive
+ * - 예전 마크업 호환용
+ */
+.radioLike,
+.radioLikeActive {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.radioLike {
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #6b7280;
+}
+
+.radioLikeActive {
+    border: 1px solid #111827;
+    background: #111827;
+    color: #ffffff;
+}
+
+/**
+ * 상태/배지 공통
+ */
+.stateOn,
+.stateOff,
+.stateDanger,
+.badgeNormal,
+.badgeBlocked,
+.badgeWithdrawn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    padding: 0 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    width: fit-content;
+}
+
+.stateOn {
+    background: #ecfdf5;
+    color: #047857;
+}
+
+.stateOff {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.stateDanger {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.badgeNormal {
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.badgeBlocked {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.badgeWithdrawn {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+/**
+ * inlineSelect
+ * - 테이블 안 역할/상태 셀렉트 기본 스타일
+ */
+.inlineSelect {
+    min-width: 110px;
+    height: 36px;
+    padding: 0 36px 0 12px;
+    border: 1px solid #cfd8e3;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #111827;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 14px;
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        background-color 0.15s ease;
+}
+
+.inlineSelect:hover {
+    border-color: #94a3b8;
+    background-color: #f8fafc;
+}
+
+.inlineSelect:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    background-color: #ffffff;
+}
+
+/**
+ * roleSelect
+ * - 역할 셀렉트 폭
+ */
+.roleSelect {
+    min-width: 100px;
+}
+
+/**
+ * statusSelect
+ * - 상태 셀렉트 폭
+ */
+.statusSelect {
+    min-width: 100px;
+}
+
+/**
+ * statusNormal
+ * - 정상 상태 셀렉트 강조
+ */
+.statusNormal {
+    border-color: #86efac;
+    background-color: #f0fdf4;
+    color: #166534;
+}
+
+.statusNormal:hover {
+    border-color: #4ade80;
+    background-color: #ecfdf5;
+}
+
+/**
+ * statusBlocked
+ * - 차단 상태 셀렉트 강조
+ */
+.statusBlocked {
+    border-color: #fca5a5;
+    background-color: #fef2f2;
+    color: #b91c1c;
+}
+
+.statusBlocked:hover {
+    border-color: #f87171;
+    background-color: #fef2f2;
+}
+
+/**
+ * statusWithdrawn
+ * - 탈퇴 상태 셀렉트 강조
+ */
+.statusWithdrawn {
+    border-color: #d1d5db;
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+.statusWithdrawn:hover {
+    border-color: #9ca3af;
+    background-color: #f3f4f6;
+}
+
+/**
+ * paginationWrap
+ * - 페이지네이션 전체 영역
+ */
+.paginationWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/**
+ * paginationInfo
+ * - 페이지네이션 정보 문구
+ */
+.paginationInfo {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/**
+ * paginationButtons
+ * - 페이지 버튼 그룹
+ */
+.paginationButtons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/**
+ * pageButton
+ * - 페이지 버튼
+ */
+.pageButton {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #111827;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.pageButton:hover:not(:disabled) {
+    background-color: #f9fafb;
+    color: #111827;
+}
+
+.pageButton:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/**
+ * pageButtonActive
+ * - 현재 페이지 버튼
+ */
+.pageButtonActive {
+    border-color: #2563eb;
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+/**
+ * tableHeaderTools
+ * - 카드 헤더 우측 도구 영역
+ */
+.tableHeaderTools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/**
+ * pageSizeLabel
+ * - 페이지당 개수 라벨
+ */
+.pageSizeLabel {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+/**
+ * pageSizeSelect
+ * - 페이지당 개수 선택 셀렉트
+ */
+.pageSizeSelect {
+    min-width: 96px;
+    height: 36px;
+    padding: 0 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #111827;
+    font-size: 13px;
+    font-weight: 600;
+    outline: none;
+}
+
+.pageSizeSelect:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+@media (max-width: 768px) {
+    .input {
+        min-width: 100%;
+    }
+
+    .searchInput {
+        min-width: 100%;
+    }
+
+    .paginationWrap {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .paginationButtons {
+        justify-content: center;
+    }
+}
+
+
+/**
+ * pagination
+ * - 회원 관리 페이지 공통 페이징 위치 조정
+ */
+.pagination {
+    margin-top: 4px;
+}
+
+/**
+ * paginationInfo
+ * - 회원 관리 페이지 페이징 정보 강조
+ */
+.paginationInfo {
+    color: #4b5563;
+}

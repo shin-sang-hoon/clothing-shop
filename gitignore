@@ -1,0 +1,80 @@
+# ============================================
+# 루트 .gitignore (clothing-shop 모노레포 공통)
+# - frontend/, backend/, chatbot/ 각 폴더에는 이미 별도 .gitignore가 있음
+# - 여기서는 OS·IDE·공통 시크릿 등 전역에서 막아야 할 것들만 처리
+# ============================================
+
+# --- OS 시스템 파일 ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# --- IDE / 에디터 설정 ---
+.idea/
+.vscode/
+.claude/
+.cursor/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.swo
+*~
+
+# --- 환경변수 / 시크릿 (공통 차단) ---
+# 각 모듈별 .gitignore도 있지만, 루트에서 한 번 더 안전망
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# --- 로그 파일 ---
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- 빌드 산출물 (안전망) ---
+dist/
+build/
+out/
+target/
+*.class
+
+# --- Python 캐시 (chatbot 외부에서 실수로 생성되는 경우 대비) ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# --- Node.js (frontend 외부에서 실수로 생성되는 경우 대비) ---
+node_modules/
+
+# --- 임시 파일 / 백업 ---
+*.tmp
+*.bak
+*.backup
+*.orig
+
+# --- 대용량 미디어 / 모델 (혹시 모를 실수 방지) ---
+# *.zip, *.tar.gz 등은 의도적으로 올리는 경우도 있으니 주석 처리
+# *.zip
+# *.tar.gz
+# *.7z
+# *.egg

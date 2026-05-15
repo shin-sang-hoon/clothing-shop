@@ -1,0 +1,12 @@
+/* ===== UserLayout.module.css ===== */
+/* 사용자 공통 레이아웃 구조 전용 스타일 */
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}

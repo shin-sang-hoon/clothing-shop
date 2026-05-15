@@ -1,0 +1,1847 @@
+[
+  {
+    "id": 2,
+    "name": "신발",
+    "code": "103",
+    "depth": 1,
+    "parentId": null,
+    "imageUrl": "/uploads/category/103.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 3,
+    "name": "상의",
+    "code": "001",
+    "depth": 1,
+    "parentId": null,
+    "imageUrl": null,
+    "sortOrder": 3
+  },
+  {
+    "id": 4,
+    "name": "아우터",
+    "code": "002",
+    "depth": 1,
+    "parentId": null,
+    "imageUrl": null,
+    "sortOrder": 4
+  },
+  {
+    "id": 5,
+    "name": "바지",
+    "code": "003",
+    "depth": 1,
+    "parentId": null,
+    "imageUrl": null,
+    "sortOrder": 5
+  },
+  {
+    "id": 6,
+    "name": "원피스/스커트",
+    "code": "100",
+    "depth": 1,
+    "parentId": null,
+    "imageUrl": null,
+    "sortOrder": 6
+  },
+  {
+    "id": 7,
+    "name": "가방",
+    "code": "004",
+    "depth": 1,
+    "parentId": null,
+    "imageUrl": null,
+    "sortOrder": 7
+  },
+  {
+    "id": 8,
+    "name": "소품",
+    "code": "101",
+    "depth": 1,
+    "parentId": null,
+    "imageUrl": null,
+    "sortOrder": 8
+  },
+  {
+    "id": 10,
+    "name": "스포츠/레저",
+    "code": "017",
+    "depth": 1,
+    "parentId": null,
+    "imageUrl": "/uploads/category/017.png",
+    "sortOrder": 10
+  },
+  {
+    "id": 13,
+    "name": "부티크",
+    "code": "105",
+    "depth": 1,
+    "parentId": null,
+    "imageUrl": "/uploads/category/105.png",
+    "sortOrder": 13
+  },
+  {
+    "id": 18,
+    "name": "긴소매 티셔츠",
+    "code": "001010",
+    "depth": 2,
+    "parentId": 3,
+    "imageUrl": "/uploads/category/001010.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 19,
+    "name": "후드 집업",
+    "code": "002022",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002022.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 20,
+    "name": "데님 팬츠",
+    "code": "003002",
+    "depth": 2,
+    "parentId": 5,
+    "imageUrl": "/uploads/category/003002.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 21,
+    "name": "메신저/크로스 백",
+    "code": "004002",
+    "depth": 2,
+    "parentId": 7,
+    "imageUrl": "/uploads/category/004002.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 22,
+    "name": "상의",
+    "code": "017016",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017016.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 23,
+    "name": "홈웨어",
+    "code": "026005",
+    "depth": 2,
+    "parentId": 9,
+    "imageUrl": "/uploads/category/026005.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 24,
+    "name": "미니원피스",
+    "code": "100001",
+    "depth": 2,
+    "parentId": 6,
+    "imageUrl": "/uploads/category/100001.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 25,
+    "name": "모자",
+    "code": "101001",
+    "depth": 2,
+    "parentId": 8,
+    "imageUrl": "/uploads/category/101001.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 26,
+    "name": "디지털/가전",
+    "code": "102001",
+    "depth": 2,
+    "parentId": 11,
+    "imageUrl": "/uploads/category/102001.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 27,
+    "name": "스니커즈",
+    "code": "103004",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103004.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 28,
+    "name": "스킨케어",
+    "code": "104001",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104001.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 29,
+    "name": "의류",
+    "code": "105001",
+    "depth": 2,
+    "parentId": 13,
+    "imageUrl": "/uploads/category/105001.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 30,
+    "name": "상의",
+    "code": "106004",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106004.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 31,
+    "name": "의류",
+    "code": "107001",
+    "depth": 2,
+    "parentId": 12,
+    "imageUrl": "/uploads/category/107001.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 32,
+    "name": "의류",
+    "code": "108001",
+    "depth": 2,
+    "parentId": 15,
+    "imageUrl": "/uploads/category/108001.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 33,
+    "name": "상의",
+    "code": "109001",
+    "depth": 2,
+    "parentId": 17,
+    "imageUrl": "/uploads/category/109001.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 34,
+    "name": "굿즈",
+    "code": "111001",
+    "depth": 2,
+    "parentId": 16,
+    "imageUrl": "/uploads/category/111001.png",
+    "sortOrder": 1
+  },
+  {
+    "id": 35,
+    "name": "맨투맨/스웨트",
+    "code": "001005",
+    "depth": 2,
+    "parentId": 3,
+    "imageUrl": "/uploads/category/001005.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 36,
+    "name": "블루종/MA-1",
+    "code": "002001",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002001.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 37,
+    "name": "트레이닝/조거 팬츠",
+    "code": "003004",
+    "depth": 2,
+    "parentId": 5,
+    "imageUrl": "/uploads/category/003004.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 38,
+    "name": "숄더백",
+    "code": "004003",
+    "depth": 2,
+    "parentId": 7,
+    "imageUrl": "/uploads/category/004003.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 39,
+    "name": "아우터",
+    "code": "017018",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017018.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 40,
+    "name": "여성 속옷 상의",
+    "code": "026001",
+    "depth": 2,
+    "parentId": 9,
+    "imageUrl": "/uploads/category/026001.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 41,
+    "name": "미디원피스",
+    "code": "100002",
+    "depth": 2,
+    "parentId": 6,
+    "imageUrl": "/uploads/category/100002.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 42,
+    "name": "머플러",
+    "code": "101008",
+    "depth": 2,
+    "parentId": 8,
+    "imageUrl": "/uploads/category/101008.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 43,
+    "name": "컬처/취미/소품",
+    "code": "102004",
+    "depth": 2,
+    "parentId": 11,
+    "imageUrl": "/uploads/category/102004.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 44,
+    "name": "스포츠화",
+    "code": "103005",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103005.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 45,
+    "name": "마스크팩",
+    "code": "104013",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104013.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 46,
+    "name": "슈즈",
+    "code": "105002",
+    "depth": 2,
+    "parentId": 13,
+    "imageUrl": "/uploads/category/105002.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 47,
+    "name": "아우터",
+    "code": "106005",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106005.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 48,
+    "name": "신발",
+    "code": "107002",
+    "depth": 2,
+    "parentId": 12,
+    "imageUrl": "/uploads/category/107002.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 49,
+    "name": "신발",
+    "code": "108002",
+    "depth": 2,
+    "parentId": 15,
+    "imageUrl": "/uploads/category/108002.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 50,
+    "name": "아우터",
+    "code": "109002",
+    "depth": 2,
+    "parentId": 17,
+    "imageUrl": "/uploads/category/109002.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 51,
+    "name": "앨범",
+    "code": "111002",
+    "depth": 2,
+    "parentId": 16,
+    "imageUrl": "/uploads/category/111002.png",
+    "sortOrder": 2
+  },
+  {
+    "id": 52,
+    "name": "셔츠/블라우스",
+    "code": "001002",
+    "depth": 2,
+    "parentId": 3,
+    "imageUrl": "/uploads/category/001002.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 53,
+    "name": "레더/라이더스 재킷",
+    "code": "002002",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002002.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 54,
+    "name": "코튼 팬츠",
+    "code": "003007",
+    "depth": 2,
+    "parentId": 5,
+    "imageUrl": "/uploads/category/003007.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 55,
+    "name": "백팩",
+    "code": "004001",
+    "depth": 2,
+    "parentId": 7,
+    "imageUrl": "/uploads/category/004001.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 56,
+    "name": "상하의세트",
+    "code": "017021",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017021.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 57,
+    "name": "여성 속옷 하의",
+    "code": "026002",
+    "depth": 2,
+    "parentId": 9,
+    "imageUrl": "/uploads/category/026002.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 58,
+    "name": "맥시원피스",
+    "code": "100003",
+    "depth": 2,
+    "parentId": 6,
+    "imageUrl": "/uploads/category/100003.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 59,
+    "name": "주얼리",
+    "code": "101006",
+    "depth": 2,
+    "parentId": 8,
+    "imageUrl": "/uploads/category/101006.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 60,
+    "name": "가구/인테리어",
+    "code": "102002",
+    "depth": 2,
+    "parentId": 11,
+    "imageUrl": "/uploads/category/102002.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 61,
+    "name": "구두",
+    "code": "103001",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103001.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 62,
+    "name": "베이스메이크업",
+    "code": "104014",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104014.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 63,
+    "name": "지갑/가방",
+    "code": "105003",
+    "depth": 2,
+    "parentId": 13,
+    "imageUrl": "/uploads/category/105003.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 64,
+    "name": "신발",
+    "code": "106012",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106012.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 65,
+    "name": "패션소품",
+    "code": "107003",
+    "depth": 2,
+    "parentId": 12,
+    "imageUrl": "/uploads/category/107003.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 66,
+    "name": "뷰티",
+    "code": "108009",
+    "depth": 2,
+    "parentId": 15,
+    "imageUrl": "/uploads/category/108009.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 67,
+    "name": "바지",
+    "code": "109003",
+    "depth": 2,
+    "parentId": 17,
+    "imageUrl": "/uploads/category/109003.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 68,
+    "name": "의류/잡화",
+    "code": "111003",
+    "depth": 2,
+    "parentId": 16,
+    "imageUrl": "/uploads/category/111003.png",
+    "sortOrder": 3
+  },
+  {
+    "id": 69,
+    "name": "후드 티셔츠",
+    "code": "001004",
+    "depth": 2,
+    "parentId": 3,
+    "imageUrl": "/uploads/category/001004.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 70,
+    "name": "슈트/블레이저 재킷",
+    "code": "002003",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002003.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 71,
+    "name": "슈트 팬츠/슬랙스",
+    "code": "003008",
+    "depth": 2,
+    "parentId": 5,
+    "imageUrl": "/uploads/category/003008.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 72,
+    "name": "토트백",
+    "code": "004015",
+    "depth": 2,
+    "parentId": 7,
+    "imageUrl": "/uploads/category/004015.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 73,
+    "name": "하의",
+    "code": "017020",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017020.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 74,
+    "name": "여성 속옷 세트",
+    "code": "026003",
+    "depth": 2,
+    "parentId": 9,
+    "imageUrl": "/uploads/category/026003.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 75,
+    "name": "미니스커트",
+    "code": "100004",
+    "depth": 2,
+    "parentId": 6,
+    "imageUrl": "/uploads/category/100004.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 76,
+    "name": "양말/레그웨어",
+    "code": "101002",
+    "depth": 2,
+    "parentId": 8,
+    "imageUrl": "/uploads/category/101002.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 77,
+    "name": "생활/주방",
+    "code": "102003",
+    "depth": 2,
+    "parentId": 11,
+    "imageUrl": "/uploads/category/102003.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 78,
+    "name": "부츠/워커",
+    "code": "103002",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103002.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 79,
+    "name": "립메이크업",
+    "code": "104015",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104015.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 80,
+    "name": "악세서리",
+    "code": "105004",
+    "depth": 2,
+    "parentId": 13,
+    "imageUrl": "/uploads/category/105004.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 81,
+    "name": "바지",
+    "code": "106006",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106006.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 82,
+    "name": "키즈",
+    "code": "107009",
+    "depth": 2,
+    "parentId": 12,
+    "imageUrl": "/uploads/category/107009.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 83,
+    "name": "패션소품",
+    "code": "108003",
+    "depth": 2,
+    "parentId": 15,
+    "imageUrl": "/uploads/category/108003.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 84,
+    "name": "원피스/스커트",
+    "code": "109004",
+    "depth": 2,
+    "parentId": 17,
+    "imageUrl": "/uploads/category/109004.png",
+    "sortOrder": 4
+  },
+  {
+    "id": 85,
+    "name": "반소매 티셔츠",
+    "code": "001001",
+    "depth": 2,
+    "parentId": 3,
+    "imageUrl": "/uploads/category/001001.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 86,
+    "name": "카디건",
+    "code": "002020",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002020.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 87,
+    "name": "숏 팬츠",
+    "code": "003009",
+    "depth": 2,
+    "parentId": 5,
+    "imageUrl": "/uploads/category/003009.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 88,
+    "name": "에코백",
+    "code": "004014",
+    "depth": 2,
+    "parentId": 7,
+    "imageUrl": "/uploads/category/004014.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 89,
+    "name": "스커트",
+    "code": "017017",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017017.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 90,
+    "name": "남성 속옷",
+    "code": "026004",
+    "depth": 2,
+    "parentId": 9,
+    "imageUrl": "/uploads/category/026004.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 91,
+    "name": "미디스커트",
+    "code": "100005",
+    "depth": 2,
+    "parentId": 6,
+    "imageUrl": "/uploads/category/100005.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 92,
+    "name": "선글라스/안경테",
+    "code": "101003",
+    "depth": 2,
+    "parentId": 8,
+    "imageUrl": "/uploads/category/101003.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 93,
+    "name": "반려동물",
+    "code": "102005",
+    "depth": 2,
+    "parentId": 11,
+    "imageUrl": "/uploads/category/102005.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 94,
+    "name": "샌들/슬리퍼",
+    "code": "103003",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103003.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 95,
+    "name": "아이메이크업",
+    "code": "104016",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104016.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 96,
+    "name": "라이프 스타일",
+    "code": "105005",
+    "depth": 2,
+    "parentId": 13,
+    "imageUrl": "/uploads/category/105005.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 97,
+    "name": "원피스/스커트",
+    "code": "106007",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106007.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 98,
+    "name": "스포츠/레저",
+    "code": "107011",
+    "depth": 2,
+    "parentId": 12,
+    "imageUrl": "/uploads/category/107011.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 99,
+    "name": "디지털/가전",
+    "code": "108004",
+    "depth": 2,
+    "parentId": 15,
+    "imageUrl": "/uploads/category/108004.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 100,
+    "name": "키즈",
+    "code": "109005",
+    "depth": 2,
+    "parentId": 17,
+    "imageUrl": "/uploads/category/109005.png",
+    "sortOrder": 5
+  },
+  {
+    "id": 101,
+    "name": "피케/카라 티셔츠",
+    "code": "001003",
+    "depth": 2,
+    "parentId": 3,
+    "imageUrl": "/uploads/category/001003.png",
+    "sortOrder": 6
+  },
+  {
+    "id": 102,
+    "name": "경량 패딩/패딩 베스트",
+    "code": "002027",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002027.png",
+    "sortOrder": 6
+  },
+  {
+    "id": 103,
+    "name": "레깅스",
+    "code": "003005",
+    "depth": 2,
+    "parentId": 5,
+    "imageUrl": "/uploads/category/003005.png",
+    "sortOrder": 6
+  },
+  {
+    "id": 104,
+    "name": "보스턴/더플백",
+    "code": "004006",
+    "depth": 2,
+    "parentId": 7,
+    "imageUrl": "/uploads/category/004006.png",
+    "sortOrder": 6
+  },
+  {
+    "id": 105,
+    "name": "원피스",
+    "code": "017019",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017019.png",
+    "sortOrder": 6
+  },
+  {
+    "id": 106,
+    "name": "롱스커트",
+    "code": "100006",
+    "depth": 2,
+    "parentId": 6,
+    "imageUrl": "/uploads/category/100006.png",
+    "sortOrder": 6
+  },
+  {
+    "id": 107,
+    "name": "액세서리",
+    "code": "101004",
+    "depth": 2,
+    "parentId": 8,
+    "imageUrl": "/uploads/category/101004.png",
+    "sortOrder": 6
+  },
+  {
+    "id": 108,
+    "name": "푸드/음료",
+    "code": "102006",
+    "depth": 2,
+    "parentId": 11,
+    "imageUrl": "/uploads/category/102006.png",
+    "sortOrder": 6
+  },
+  {
+    "id": 109,
+    "name": "패딩/퍼 신발",
+    "code": "103007",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103007.png",
+    "sortOrder": 6
+  },
+  {
+    "id": 110,
+    "name": "네일",
+    "code": "104017",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104017.png",
+    "sortOrder": 6
+  },
+  {
+    "id": 111,
+    "name": "뷰티",
+    "code": "105007",
+    "depth": 2,
+    "parentId": 13,
+    "imageUrl": "/uploads/category/105007.png",
+    "sortOrder": 6
+  },
+  {
+    "id": 112,
+    "name": "세트 의류",
+    "code": "106008",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106008.png",
+    "sortOrder": 6
+  },
+  {
+    "id": 113,
+    "name": "가구/인테리어",
+    "code": "108005",
+    "depth": 2,
+    "parentId": 15,
+    "imageUrl": "/uploads/category/108005.png",
+    "sortOrder": 6
+  },
+  {
+    "id": 114,
+    "name": "스포츠/레저",
+    "code": "109006",
+    "depth": 2,
+    "parentId": 17,
+    "imageUrl": "/uploads/category/109006.png",
+    "sortOrder": 6
+  },
+  {
+    "id": 115,
+    "name": "니트/스웨터",
+    "code": "001006",
+    "depth": 2,
+    "parentId": 3,
+    "imageUrl": "/uploads/category/001006.png",
+    "sortOrder": 7
+  },
+  {
+    "id": 116,
+    "name": "사파리/헌팅 재킷",
+    "code": "002014",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002014.png",
+    "sortOrder": 7
+  },
+  {
+    "id": 117,
+    "name": "점프 슈트/오버올",
+    "code": "003010",
+    "depth": 2,
+    "parentId": 5,
+    "imageUrl": "/uploads/category/003010.png",
+    "sortOrder": 7
+  },
+  {
+    "id": 118,
+    "name": "웨이스트 백",
+    "code": "004007",
+    "depth": 2,
+    "parentId": 7,
+    "imageUrl": "/uploads/category/004007.png",
+    "sortOrder": 7
+  },
+  {
+    "id": 119,
+    "name": "수영복/비치웨어",
+    "code": "017022",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017022.png",
+    "sortOrder": 7
+  },
+  {
+    "id": 120,
+    "name": "시계",
+    "code": "101005",
+    "depth": 2,
+    "parentId": 8,
+    "imageUrl": "/uploads/category/101005.png",
+    "sortOrder": 7
+  },
+  {
+    "id": 121,
+    "name": "신발용품",
+    "code": "103006",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103006.png",
+    "sortOrder": 7
+  },
+  {
+    "id": 122,
+    "name": "프레그런스",
+    "code": "104005",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104005.png",
+    "sortOrder": 7
+  },
+  {
+    "id": 123,
+    "name": "12개월 이하",
+    "code": "106009",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106009.png",
+    "sortOrder": 7
+  },
+  {
+    "id": 124,
+    "name": "생활/주방",
+    "code": "108006",
+    "depth": 2,
+    "parentId": 15,
+    "imageUrl": "/uploads/category/108006.png",
+    "sortOrder": 7
+  },
+  {
+    "id": 125,
+    "name": "민소매 티셔츠",
+    "code": "001011",
+    "depth": 2,
+    "parentId": 3,
+    "imageUrl": "/uploads/category/001011.png",
+    "sortOrder": 8
+  },
+  {
+    "id": 126,
+    "name": "트러커 재킷",
+    "code": "002017",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002017.png",
+    "sortOrder": 8
+  },
+  {
+    "id": 127,
+    "name": "기타 하의",
+    "code": "003006",
+    "depth": 2,
+    "parentId": 5,
+    "imageUrl": "/uploads/category/003006.png",
+    "sortOrder": 8
+  },
+  {
+    "id": 128,
+    "name": "파우치 백",
+    "code": "004013",
+    "depth": 2,
+    "parentId": 7,
+    "imageUrl": "/uploads/category/004013.png",
+    "sortOrder": 8
+  },
+  {
+    "id": 129,
+    "name": "신발",
+    "code": "017023",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017023.png",
+    "sortOrder": 8
+  },
+  {
+    "id": 130,
+    "name": "벨트",
+    "code": "101007",
+    "depth": 2,
+    "parentId": 8,
+    "imageUrl": "/uploads/category/101007.png",
+    "sortOrder": 8
+  },
+  {
+    "id": 131,
+    "name": "나이키 에어포스 1",
+    "code": "103008",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103008.png",
+    "sortOrder": 8
+  },
+  {
+    "id": 132,
+    "name": "선케어",
+    "code": "104002",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104002.png",
+    "sortOrder": 8
+  },
+  {
+    "id": 133,
+    "name": "시즌/테마",
+    "code": "106010",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106010.png",
+    "sortOrder": 8
+  },
+  {
+    "id": 134,
+    "name": "컬처/취미/소품",
+    "code": "108007",
+    "depth": 2,
+    "parentId": 15,
+    "imageUrl": "/uploads/category/108007.png",
+    "sortOrder": 8
+  },
+  {
+    "id": 135,
+    "name": "기타 상의",
+    "code": "001008",
+    "depth": 2,
+    "parentId": 3,
+    "imageUrl": "/uploads/category/001008.png",
+    "sortOrder": 9
+  },
+  {
+    "id": 136,
+    "name": "스타디움 재킷",
+    "code": "002004",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002004.png",
+    "sortOrder": 9
+  },
+  {
+    "id": 137,
+    "name": "브리프 케이스",
+    "code": "004008",
+    "depth": 2,
+    "parentId": 7,
+    "imageUrl": "/uploads/category/004008.png",
+    "sortOrder": 9
+  },
+  {
+    "id": 138,
+    "name": "기구/용품/장비",
+    "code": "017024",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017024.png",
+    "sortOrder": 9
+  },
+  {
+    "id": 139,
+    "name": "아디다스 삼바 OG",
+    "code": "103009",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103009.png",
+    "sortOrder": 9
+  },
+  {
+    "id": 140,
+    "name": "클렌징/필링",
+    "code": "104003",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104003.png",
+    "sortOrder": 9
+  },
+  {
+    "id": 141,
+    "name": "속옷/홈웨어",
+    "code": "106011",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106011.png",
+    "sortOrder": 9
+  },
+  {
+    "id": 142,
+    "name": "반려동물",
+    "code": "108008",
+    "depth": 2,
+    "parentId": 15,
+    "imageUrl": "/uploads/category/108008.png",
+    "sortOrder": 9
+  },
+  {
+    "id": 143,
+    "name": "나일론/코치 재킷",
+    "code": "002006",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002006.png",
+    "sortOrder": 10
+  },
+  {
+    "id": 144,
+    "name": "캐리어",
+    "code": "004009",
+    "depth": 2,
+    "parentId": 7,
+    "imageUrl": "/uploads/category/004009.png",
+    "sortOrder": 10
+  },
+  {
+    "id": 145,
+    "name": "가방",
+    "code": "017025",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017025.png",
+    "sortOrder": 10
+  },
+  {
+    "id": 146,
+    "name": "푸마 스피드캣",
+    "code": "103010",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103010.png",
+    "sortOrder": 10
+  },
+  {
+    "id": 147,
+    "name": "헤어케어",
+    "code": "104006",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104006.png",
+    "sortOrder": 10
+  },
+  {
+    "id": 148,
+    "name": "가방/지갑",
+    "code": "106013",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106013.png",
+    "sortOrder": 10
+  },
+  {
+    "id": 149,
+    "name": "스포츠/레저",
+    "code": "108010",
+    "depth": 2,
+    "parentId": 15,
+    "imageUrl": "/uploads/category/108010.png",
+    "sortOrder": 10
+  },
+  {
+    "id": 150,
+    "name": "트레이닝 재킷",
+    "code": "002018",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002018.png",
+    "sortOrder": 11
+  },
+  {
+    "id": 151,
+    "name": "가방 소품",
+    "code": "004012",
+    "depth": 2,
+    "parentId": 7,
+    "imageUrl": "/uploads/category/004012.png",
+    "sortOrder": 11
+  },
+  {
+    "id": 152,
+    "name": "잡화",
+    "code": "017026",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017026.png",
+    "sortOrder": 11
+  },
+  {
+    "id": 153,
+    "name": "아디다스 핸드볼 스페지알",
+    "code": "103012",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103012.png",
+    "sortOrder": 11
+  },
+  {
+    "id": 154,
+    "name": "바디케어",
+    "code": "104007",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104007.png",
+    "sortOrder": 11
+  },
+  {
+    "id": 155,
+    "name": "모자",
+    "code": "106014",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106014.png",
+    "sortOrder": 11
+  },
+  {
+    "id": 156,
+    "name": "더 나은 소재",
+    "code": "108011",
+    "depth": 2,
+    "parentId": 15,
+    "imageUrl": "/uploads/category/108011.png",
+    "sortOrder": 11
+  },
+  {
+    "id": 157,
+    "name": "아노락 재킷",
+    "code": "002019",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002019.png",
+    "sortOrder": 12
+  },
+  {
+    "id": 158,
+    "name": "지갑/머니클립",
+    "code": "004016",
+    "depth": 2,
+    "parentId": 7,
+    "imageUrl": "/uploads/category/004016.png",
+    "sortOrder": 12
+  },
+  {
+    "id": 159,
+    "name": "모자",
+    "code": "017027",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017027.png",
+    "sortOrder": 12
+  },
+  {
+    "id": 160,
+    "name": "반스 올드스쿨",
+    "code": "103013",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103013.png",
+    "sortOrder": 12
+  },
+  {
+    "id": 161,
+    "name": "쉐이빙/제모",
+    "code": "104009",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104009.png",
+    "sortOrder": 12
+  },
+  {
+    "id": 162,
+    "name": "액세서리/소품",
+    "code": "106015",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106015.png",
+    "sortOrder": 12
+  },
+  {
+    "id": 163,
+    "name": "비건",
+    "code": "108013",
+    "depth": 2,
+    "parentId": 15,
+    "imageUrl": "/uploads/category/108013.png",
+    "sortOrder": 12
+  },
+  {
+    "id": 164,
+    "name": "플리스/뽀글이",
+    "code": "002023",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002023.png",
+    "sortOrder": 13
+  },
+  {
+    "id": 165,
+    "name": "클러치 백",
+    "code": "004005",
+    "depth": 2,
+    "parentId": 7,
+    "imageUrl": "/uploads/category/004005.png",
+    "sortOrder": 13
+  },
+  {
+    "id": 166,
+    "name": "골프",
+    "code": "017055",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017055.png",
+    "sortOrder": 13
+  },
+  {
+    "id": 167,
+    "name": "휠라 에샤페",
+    "code": "103014",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103014.png",
+    "sortOrder": 13
+  },
+  {
+    "id": 168,
+    "name": "뷰티 디바이스/소품",
+    "code": "104010",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104010.png",
+    "sortOrder": 13
+  },
+  {
+    "id": 169,
+    "name": "장난감",
+    "code": "106016",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106016.png",
+    "sortOrder": 13
+  },
+  {
+    "id": 170,
+    "name": "동물권 존중",
+    "code": "108014",
+    "depth": 2,
+    "parentId": 15,
+    "imageUrl": "/uploads/category/108014.png",
+    "sortOrder": 13
+  },
+  {
+    "id": 171,
+    "name": "환절기 코트",
+    "code": "002008",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002008.png",
+    "sortOrder": 14
+  },
+  {
+    "id": 172,
+    "name": "러닝",
+    "code": "017040",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017040.png",
+    "sortOrder": 14
+  },
+  {
+    "id": 173,
+    "name": "나이키 보메로",
+    "code": "103015",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103015.png",
+    "sortOrder": 14
+  },
+  {
+    "id": 174,
+    "name": "미용소품",
+    "code": "104011",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104011.png",
+    "sortOrder": 14
+  },
+  {
+    "id": 175,
+    "name": "교육",
+    "code": "106017",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106017.png",
+    "sortOrder": 14
+  },
+  {
+    "id": 176,
+    "name": "사회적 가치",
+    "code": "108015",
+    "depth": 2,
+    "parentId": 15,
+    "imageUrl": "/uploads/category/108015.png",
+    "sortOrder": 14
+  },
+  {
+    "id": 177,
+    "name": "베스트",
+    "code": "002021",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002021.png",
+    "sortOrder": 15
+  },
+  {
+    "id": 178,
+    "name": "등산/아웃도어",
+    "code": "017045",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017045.png",
+    "sortOrder": 15
+  },
+  {
+    "id": 179,
+    "name": "아식스 젤-카야노 14",
+    "code": "103016",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103016.png",
+    "sortOrder": 15
+  },
+  {
+    "id": 180,
+    "name": "헬스/푸드",
+    "code": "104012",
+    "depth": 2,
+    "parentId": 1,
+    "imageUrl": "/uploads/category/104012.png",
+    "sortOrder": 15
+  },
+  {
+    "id": 181,
+    "name": "홈인테리어/리빙",
+    "code": "106018",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106018.png",
+    "sortOrder": 15
+  },
+  {
+    "id": 182,
+    "name": "무스탕/퍼",
+    "code": "002025",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002025.png",
+    "sortOrder": 16
+  },
+  {
+    "id": 183,
+    "name": "피트니스",
+    "code": "017042",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017042.png",
+    "sortOrder": 16
+  },
+  {
+    "id": 184,
+    "name": "아디다스 도쿄",
+    "code": "103017",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103017.png",
+    "sortOrder": 16
+  },
+  {
+    "id": 185,
+    "name": "베이비패션",
+    "code": "106001",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106001.png",
+    "sortOrder": 16
+  },
+  {
+    "id": 186,
+    "name": "겨울 싱글 코트",
+    "code": "002007",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002007.png",
+    "sortOrder": 17
+  },
+  {
+    "id": 187,
+    "name": "수영",
+    "code": "017046",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017046.png",
+    "sortOrder": 17
+  },
+  {
+    "id": 188,
+    "name": "뉴발란스 530",
+    "code": "103018",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103018.png",
+    "sortOrder": 17
+  },
+  {
+    "id": 189,
+    "name": "키즈패션",
+    "code": "106002",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106002.png",
+    "sortOrder": 17
+  },
+  {
+    "id": 190,
+    "name": "겨울 더블 코트",
+    "code": "002024",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002024.png",
+    "sortOrder": 18
+  },
+  {
+    "id": 191,
+    "name": "요가/필라테스",
+    "code": "017043",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017043.png",
+    "sortOrder": 18
+  },
+  {
+    "id": 192,
+    "name": "뉴발란스 740",
+    "code": "103019",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103019.png",
+    "sortOrder": 18
+  },
+  {
+    "id": 193,
+    "name": "주니어패션",
+    "code": "106003",
+    "depth": 2,
+    "parentId": 14,
+    "imageUrl": "/uploads/category/106003.png",
+    "sortOrder": 18
+  },
+  {
+    "id": 194,
+    "name": "겨울 기타 코트",
+    "code": "002009",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002009.png",
+    "sortOrder": 19
+  },
+  {
+    "id": 195,
+    "name": "캠핑",
+    "code": "017044",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017044.png",
+    "sortOrder": 19
+  },
+  {
+    "id": 196,
+    "name": "푸마 H-Street",
+    "code": "103020",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103020.png",
+    "sortOrder": 19
+  },
+  {
+    "id": 197,
+    "name": "롱패딩/헤비 아우터",
+    "code": "002013",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002013.png",
+    "sortOrder": 20
+  },
+  {
+    "id": 198,
+    "name": "축구",
+    "code": "017041",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017041.png",
+    "sortOrder": 20
+  },
+  {
+    "id": 199,
+    "name": "살로몬 XT-6",
+    "code": "103021",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103021.png",
+    "sortOrder": 20
+  },
+  {
+    "id": 200,
+    "name": "숏패딩/헤비 아우터",
+    "code": "002012",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002012.png",
+    "sortOrder": 21
+  },
+  {
+    "id": 201,
+    "name": "야구",
+    "code": "017050",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017050.png",
+    "sortOrder": 21
+  },
+  {
+    "id": 202,
+    "name": "컨버스 척 70",
+    "code": "103022",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103022.png",
+    "sortOrder": 21
+  },
+  {
+    "id": 203,
+    "name": "기타 아우터",
+    "code": "002015",
+    "depth": 2,
+    "parentId": 4,
+    "imageUrl": "/uploads/category/002015.png",
+    "sortOrder": 22
+  },
+  {
+    "id": 204,
+    "name": "농구",
+    "code": "017051",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017051.png",
+    "sortOrder": 22
+  },
+  {
+    "id": 205,
+    "name": "오니츠카 타이거 멕시코 66",
+    "code": "103023",
+    "depth": 2,
+    "parentId": 2,
+    "imageUrl": "/uploads/category/103023.png",
+    "sortOrder": 22
+  },
+  {
+    "id": 206,
+    "name": "자전거",
+    "code": "017047",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017047.png",
+    "sortOrder": 23
+  },
+  {
+    "id": 207,
+    "name": "테니스",
+    "code": "017048",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017048.png",
+    "sortOrder": 24
+  },
+  {
+    "id": 208,
+    "name": "배드민턴",
+    "code": "017049",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017049.png",
+    "sortOrder": 25
+  },
+  {
+    "id": 209,
+    "name": "기타 스포츠",
+    "code": "017057",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017057.png",
+    "sortOrder": 26
+  },
+  {
+    "id": 210,
+    "name": "낚시",
+    "code": "017054",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017054.png",
+    "sortOrder": 27
+  },
+  {
+    "id": 211,
+    "name": "탁구",
+    "code": "017052",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017052.png",
+    "sortOrder": 28
+  },
+  {
+    "id": 212,
+    "name": "보드/스케이트",
+    "code": "017056",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017056.png",
+    "sortOrder": 29
+  },
+  {
+    "id": 213,
+    "name": "스키/스노우보드",
+    "code": "017053",
+    "depth": 2,
+    "parentId": 10,
+    "imageUrl": "/uploads/category/017053.png",
+    "sortOrder": 30
+  }
+]

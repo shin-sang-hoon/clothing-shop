@@ -1,0 +1,161 @@
+/* 공통 필터 행 */
+.filterRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.searchInput {
+    height: 38px;
+    min-width: 240px;
+    flex: 1;
+    padding: 0 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    color: #111827;
+    outline: none;
+}
+
+.searchInput:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.filterSelect {
+    height: 38px;
+    min-width: 120px;
+    padding: 0 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    color: #111827;
+    outline: none;
+}
+
+.filterSelect:focus {
+    border-color: #2563eb;
+}
+
+/* 공통 배지 */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    padding: 0 9px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.kindShoes   { background: #eff6ff; color: #1d4ed8; }
+.kindClothes { background: #f0fdf4; color: #15803d; }
+.kindAcc     { background: #fdf4ff; color: #9333ea; }
+
+.activeOn  { background: #ecfdf5; color: #047857; }
+.activeOff { background: #f3f4f6; color: #6b7280; }
+
+/* 셀 스타일 */
+.idCell {
+    font-size: 13px;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.dateCell {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* 에러 */
+.inputError {
+    border-color: #ef4444 !important;
+}
+
+.errorMsg {
+    font-size: 12px;
+    color: #ef4444;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* 태그 칩 */
+.tagChip {
+    display: inline-flex;
+    align-items: center;
+    height: 26px;
+    padding: 0 12px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* 태그 그룹 카드 */
+.groupCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.groupCard {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px 18px;
+}
+
+.groupCardTitle {
+    font-size: 15px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.groupCardDesc {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.groupCardCount {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+/* 통계 행 */
+.statRow {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.statItem {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 14px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 140px;
+}
+
+.statLabel {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.statValue {
+    font-size: 22px;
+    font-weight: 800;
+    color: #111827;
+}

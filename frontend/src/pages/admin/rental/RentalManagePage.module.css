@@ -1,0 +1,133 @@
+/* ── 테이블 수평 스크롤 ── */
+.tableScroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 테이블 최소 너비 고정 → 사이드바 열려도 한 줄 유지 */
+.tableScroll table {
+  min-width: 1560px;
+}
+
+/* 셀 내용 줄바꿈 방지 */
+.tableScroll td {
+  white-space: nowrap;
+}
+
+/* ── 상태 변경 셀렉트 ── */
+.statusSelect {
+  padding: 4px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #fff;
+  outline: none;
+  min-width: 90px;
+}
+
+.statusSelect:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── 검색 패널 ── */
+.searchPanel {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.searchLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: #374151;
+  min-width: 44px;
+  flex-shrink: 0;
+}
+
+/* 날짜 그룹 */
+.dateGroup {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.quickBtn {
+  padding: 6px 12px;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.quickBtn:hover {
+  background: #dbeafe;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+}
+
+.dateInput {
+  padding: 7px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  font-size: 13px;
+  outline: none;
+  color: #374151;
+}
+
+.dateInput:focus {
+  border-color: #2563eb;
+}
+
+.dateSep {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+/* 키워드 그룹 */
+.keywordGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.keywordInput {
+  flex: 1;
+  min-width: 200px;
+  padding: 9px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  font-size: 13px;
+  outline: none;
+}
+
+.keywordInput:focus {
+  border-color: #2563eb;
+}
+
+.searchActions {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}

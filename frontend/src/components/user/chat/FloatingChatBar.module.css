@@ -1,0 +1,794 @@
+.container {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+/* ── FAB 영역 ── */
+.fab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+/* 메인 원형 버튼 */
+.mainBtn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #111827;
+  color: #fff;
+  font-size: 22px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.mainBtn:hover {
+  background: #374151;
+  transform: scale(1.08);
+}
+
+.mainBtnOpen {
+  background: #374151;
+}
+
+/* 서브 버튼 목록 */
+.subBtns {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.subBtnsOpen {
+  max-height: 240px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 서브 버튼 행 (라벨 + 원형 버튼) */
+.subItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.subLabel {
+  background: rgba(17, 24, 39, 0.82);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+}
+
+.subBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+.subBtn:hover {
+  background: #f1f5f9;
+  transform: scale(1.1);
+}
+
+/* ── 채팅 팝업 ── */
+.popup {
+  width: 340px;
+  height: 440px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px 16px 4px 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.popupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: #111827;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.closeBtn:hover {
+  opacity: 1;
+}
+
+.messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.msgRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.msgRowMe {
+  flex-direction: row-reverse;
+}
+
+.aiAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bubble {
+  max-width: 72%;
+  padding: 9px 12px;
+  background: #f1f5f9;
+  border-radius: 14px 14px 14px 4px;
+  font-size: 13px;
+  color: #111;
+  line-height: 1.5;
+}
+
+.bubbleMe {
+  background: #111827;
+  color: #fff;
+  border-radius: 14px 14px 4px 14px;
+}
+
+.bubbleAi {
+  background: #eff6ff;
+  color: #1e40af;
+  border-radius: 14px 14px 14px 4px;
+}
+
+.bubbleAiHtml {
+  background: #fff;
+  color: #111827;
+  border-radius: 14px 14px 14px 4px;
+  border: 1px solid #e5e7eb;
+  max-width: 88%;
+}
+
+.msgTime {
+  display: block;
+  font-size: 10px;
+  color: #94a3b8;
+  margin-top: 3px;
+  text-align: right;
+}
+
+.bubbleMe .msgTime {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.inputRow {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  border-top: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.chatInput {
+  flex: 1;
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.chatInput:focus {
+  border-color: #111827;
+}
+
+.sendBtn {
+  height: 36px;
+  padding: 0 14px;
+  background: #111827;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sendBtn:hover {
+  background: #374151;
+}
+
+.sendBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.connectedBadge {
+  font-size: 10px;
+  font-weight: 600;
+  background: #16a34a;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 6px;
+}
+
+.loadingHint {
+  font-size: 12px;
+  color: #9ca3af;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.groupNotice {
+  font-size: 13px;
+  color: #6b7280;
+  text-align: center;
+  padding: 40px 16px;
+  line-height: 1.6;
+}
+
+.senderName {
+  font-size: 10px;
+  color: #6b7280;
+  margin-bottom: 2px;
+  padding-left: 4px;
+}
+
+/* ── 단체채팅 목록 ── */
+.groupListHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px 4px;
+  border-bottom: 1px solid #f1f5f9;
+  flex-shrink: 0;
+}
+
+.createRoomBtn {
+  font-size: 12px;
+  font-weight: 600;
+  color: #111827;
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.createRoomBtn:hover {
+  background: #f1f5f9;
+}
+
+.createRoomForm {
+  display: flex;
+  gap: 6px;
+  padding: 6px 10px;
+  border-bottom: 1px solid #f1f5f9;
+  flex-shrink: 0;
+}
+
+.groupList {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.groupRoomItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #f8fafc;
+  transition: background 0.15s;
+}
+
+.groupRoomItem:hover {
+  background: #f8fafc;
+}
+
+.groupRoomIcon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.groupRoomInfo {
+  min-width: 0;
+}
+
+.groupRoomName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.groupRoomDate {
+  font-size: 11px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 6px 0 0;
+  line-height: 1;
+}
+
+/* ── 신고 관련 ── */
+.senderRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 2px;
+  padding-left: 4px;
+}
+
+.reportBtn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.reportBtn:hover {
+  color: #ef4444;
+}
+
+.reportOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reportBox {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reportTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.reportInput {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+  resize: none;
+  outline: none;
+}
+
+.reportInput:focus {
+  border-color: #111827;
+}
+
+.reportBtns {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.reportCancelBtn {
+  padding: 6px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.reportSubmitBtn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  background: #ef4444;
+  color: #fff;
+  cursor: pointer;
+}
+
+.reportSubmitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── 채팅 팝업 공용 배경 오버레이 ── */
+.chatBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1499;
+}
+
+/* ── 채팅 팝업 정가운데 ── */
+.centeredPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1500;
+  width: 480px;
+  height: 580px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (max-width: 540px) {
+  .centeredPopup {
+    width: calc(100vw - 24px);
+    height: calc(100dvh - 80px);
+    border-radius: 12px;
+  }
+}
+
+/* ── AI 챗봇 배경 오버레이 ── */
+.aiBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1499;
+}
+
+/* ── AI 챗봇 전용 팝업 ── */
+.aiPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1500;
+  width: 600px;
+  height: 720px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (max-width: 660px) {
+  .aiPopup {
+    width: calc(100vw - 24px);
+    height: calc(100dvh - 80px);
+    border-radius: 12px;
+  }
+}
+
+.aiPopupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: #1c1c1e;
+  flex-shrink: 0;
+}
+
+.aiProfileRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.aiProfileAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aiProfileAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.aiProfileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.aiProfileName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.aiStatusRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #a1a1aa;
+}
+
+.aiDotOn {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+}
+
+.aiDotOff {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ef4444;
+  flex-shrink: 0;
+}
+
+/* 카테고리 빠른 버튼 바 */
+.aiCategoryBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  flex-shrink: 0;
+}
+
+.aiCategoryBtn {
+  padding: 5px 11px;
+  background: #f8fafc;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.aiCategoryBtn:hover {
+  background: #e5e7eb;
+}
+
+/* AI 메시지 블록 (bubble + 버튼 그룹 묶음) */
+.aiMsgBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* 버튼 그룹 행 (아바타 너비만큼 들여쓰기) */
+.aiBtnGroupRow {
+  padding-left: 34px;
+}
+
+/* AI 입력 바 */
+.aiInputRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #1c1c1e;
+  flex-shrink: 0;
+}
+
+.aiInput {
+  flex: 1;
+  height: 38px;
+  padding: 0 12px;
+  background: #2c2c2e;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #fff;
+  outline: none;
+}
+
+.aiInput::placeholder {
+  color: #71717a;
+}
+
+.aiSendBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.aiSendBtn:hover {
+  background: #1d4ed8;
+}
+
+.aiSendBtn:disabled {
+  background: #3f3f46;
+  cursor: not-allowed;
+}
+
+/* ── 상품 카테고리 3×3 그리드 ── */
+.productChoiceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.productChoiceBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px 6px;
+  background: #fff;
+  color: #111827;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
+  min-height: 44px;
+}
+
+.productChoiceBtn:hover {
+  background: #f1f5f9;
+  border-color: #9ca3af;
+}
+
+/* ── AI 챗봇 버튼 그룹 ── */
+.aiBtnGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.aiBtn {
+  padding: 5px 12px;
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.aiBtn:hover {
+  background: #dbeafe;
+  border-color: #93c5fd;
+}
+
+/* ── AI 답변 로딩 점 애니메이션 ── */
+.aiTyping {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 2px;
+}
+
+.aiTyping span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #93c5fd;
+  display: inline-block;
+  animation: aiDot 1.2s infinite ease-in-out;
+}
+
+.aiTyping span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.aiTyping span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes aiDot {
+  0%, 80%, 100% { transform: scale(0.7); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
