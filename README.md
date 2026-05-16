@@ -16,7 +16,7 @@
 | **프로젝트명** | MUREAM (무림) |
 | **개발 기간** | 2026.03.09 ~ 2026.04.02 (약 25일) |
 | **팀 구성** | 3인 |
-| **나의 역할** | 백엔드(관리자/탈퇴), AI 챗봇, 크롤러, WebSocket, AWS 배포 |
+| **나의 역할** | 백엔드(관리자), AI 챗봇, 크롤러, WebSocket, 리뷰/신고, AWS 배포 |
 | **배포 환경** | AWS S3 + CloudFront + EC2 |
 
 ### 한 줄 소개
@@ -44,6 +44,422 @@
          
   🌐 배포: React → S3 → CloudFront / Spring Boot → EC2
 ```
+
+---
+
+## 🗂 ERD (Entity Relationship Diagram)
+
+> **MUREAM** 시스템의 데이터베이스 구조를 도메인별로 그룹화하여 정리했습니다.  
+> 백엔드 엔티티(JPA `@Entity`) 약 40개 중 핵심 도메인을 추려 시각화했습니다.
+
+### 📊 전체 ERD
+
+```mermaid
+erDiagram
+    %% ===== 회원 & 인증 =====
+    MEMBER ||--o{ SOCIAL_ACCOUNT : "소셜 연동"
+    MEMBER ||--o{ REFRESH_TOKEN : "JWT 갱신 토큰"
+    MEMBER }o--o{ ROLE : "회원-역할 (member_role)"
+    ROLE }o--o{ PERMISSION : "역할-권한 (role_permission)"
+    MEMBER }o--o{ PERMISSION : "회원-직접권한 (member_permission)"
+
+    %% ===== 상품 카탈로그 =====
+    BRAND ||--o{ ITEM : "브랜드 보유"
+    CATEGORY ||--o{ ITEM : "카테고리 분류"
+    CATEGORY ||--o{ CATEGORY : "상하위 (self-ref)"
+    ITEM ||--o{ ITEM_IMAGE : "상품 이미지"
+    ITEM ||--o{ ITEM_OPTION : "사이즈/색상 옵션"
+    ITEM ||--o{ ITEM_TAG : "태그 매핑"
+    TAG ||--o{ ITEM_TAG : ""
+    ITEM ||--o{ ITEM_FILTER : "필터 매핑"
+    FILTER ||--o{ ITEM_FILTER : ""
+    FILTER_GROUP ||--o{ FILTER : "필터 그룹"
+
+    %% ===== 거래 (경매) =====
+    MEMBER ||--o{ BUY_BID : "구매 입찰자"
+    MEMBER ||--o{ SELL_BID : "판매 입찰자"
+    ITEM ||--o{ BUY_BID : ""
+    ITEM ||--o{ SELL_BID : ""
+    ITEM_OPTION ||--o{ BUY_BID : ""
+    ITEM_OPTION ||--o{ SELL_BID : ""
+    ITEM ||--o{ CONCLUDED_TRADE : ""
+    MEMBER ||--o{ CONCLUDED_TRADE : "구매자/판매자"
+
+    %% ===== 렌탈 =====
+    MEMBER ||--o{ RENTAL_ORDER : "대여자/판매자"
+    ITEM ||--o{ RENTAL_ORDER : ""
+    ITEM_OPTION ||--o{ RENTAL_ORDER : ""
+
+    %% ===== 리뷰 & 신고 (본인 담당) =====
+    MEMBER ||--o{ REVIEW : "리뷰 작성"
+    ITEM ||--o{ REVIEW : "상품 리뷰"
+    REVIEW ||--o{ REVIEW_REPORT : "신고 (스냅샷)"
+
+    %% ===== 채팅 (본인 담당) =====
+    CHAT_ROOM ||--o{ CHAT_MESSAGE : "메시지 보관"
+    CHAT_MESSAGE ||--o{ CHAT_MESSAGE_REPORT : "메시지 신고 (스냅샷)"
+
+    %% ===== 좋아요 =====
+    MEMBER ||--o{ ITEM_LIKE : "상품 좋아요"
+    ITEM ||--o{ ITEM_LIKE : ""
+    MEMBER ||--o{ BRAND_LIKE : "브랜드 좋아요"
+    BRAND ||--o{ BRAND_LIKE : ""
+
+    %% ===== 감사 로그 =====
+    MEMBER ||--o{ AUDIT_LOG : "행위자 기록"
+
+    %% ===== 엔티티 필드 정의 =====
+    MEMBER {
+        bigint id PK
+        string email UK "로그인 키"
+        string name
+        string nickname "채팅 표시명"
+        string phone_number
+        string password_hash "BCrypt"
+        enum status "NORMAL/BLOCKED/WITHDRAWN"
+        int point
+        boolean email_verified
+        datetime last_login_at
+        datetime created_at
+    }
+
+    SOCIAL_ACCOUNT {
+        bigint id PK
+        bigint member_id FK
+        enum provider "GOOGLE/KAKAO/NAVER"
+        string provider_user_id
+        string provider_email
+    }
+
+    REFRESH_TOKEN {
+        bigint id PK
+        bigint member_id FK
+        string token_hash
+        datetime expires_at
+    }
+
+    ROLE {
+        bigint id PK
+        string name
+        string description
+    }
+
+    PERMISSION {
+        bigint id PK
+        string code UK
+        string name
+        string description
+    }
+
+    BRAND {
+        bigint id PK
+        string code UK
+        string name_ko
+        string name_en
+        string icon_image_url
+        boolean exclusive_yn
+        int like_cnt
+    }
+
+    CATEGORY {
+        bigint id PK
+        bigint parent_id FK "상위 카테고리"
+        string name
+        string code UK
+        int depth
+        string image_url
+    }
+
+    ITEM {
+        bigint id PK
+        string item_no UK "9자리 0-패딩"
+        bigint brand_id FK
+        bigint category_id FK
+        string name
+        int retail_price "정가"
+        int rental_price "1일 렌탈가"
+        string item_mode "AUCTION/RENTAL/BOTH"
+        string status "판매중/품절/숨김"
+        int like_cnt
+        int view_cnt
+    }
+
+    ITEM_OPTION {
+        bigint id PK
+        bigint item_id FK
+        bigint source_tag_id FK
+        string option_value "사이즈/색상"
+        enum rental_status "AVAILABLE/RENTED/INSPECTING"
+    }
+
+    ITEM_IMAGE {
+        bigint id PK
+        bigint item_id FK
+        enum image_type "MAIN/DETAIL/THUMBNAIL"
+        string image_url
+        int sort_order
+    }
+
+    ITEM_TAG {
+        bigint id PK
+        bigint item_id FK
+        bigint tag_id FK
+    }
+
+    ITEM_FILTER {
+        bigint id PK
+        bigint item_id FK
+        bigint tag_id FK "Filter 참조"
+    }
+
+    TAG {
+        bigint id PK
+        string code UK
+        string name
+    }
+
+    FILTER {
+        bigint id PK
+        bigint filter_group_id FK
+        string code UK
+        string name
+        string color_hex
+    }
+
+    FILTER_GROUP {
+        bigint id PK
+        string code UK
+        string name
+        boolean multi_select_yn
+        enum group_role
+    }
+
+    BUY_BID {
+        bigint id PK
+        bigint item_id FK
+        bigint item_option_id FK
+        bigint buyer_id FK
+        int price "입찰가"
+        enum status "PENDING/MATCHED/CANCELED"
+        int payment_amount
+        string payment_id "PortOne"
+    }
+
+    SELL_BID {
+        bigint id PK
+        bigint item_id FK
+        bigint item_option_id FK
+        bigint seller_id FK
+        int price "판매 호가"
+        enum status "PENDING/MATCHED/CANCELED"
+    }
+
+    CONCLUDED_TRADE {
+        bigint id PK
+        string trade_no UK
+        bigint item_id FK
+        bigint buyer_id FK
+        bigint seller_id FK
+        int trade_price "체결가"
+        string courier
+        string tracking_number
+        string receiver_name
+        string road_address
+    }
+
+    RENTAL_ORDER {
+        bigint id PK
+        string order_no UK
+        bigint seller_id FK
+        bigint renter_id FK
+        bigint item_id FK
+        bigint item_option_id FK
+        string status "주문/대여중/반납/연체"
+        date start_date
+        date end_date
+        int rental_price
+        int deposit "보증금"
+    }
+
+    REVIEW {
+        bigint id PK
+        bigint item_id FK
+        bigint member_id FK
+        int rating "별점 1-5"
+        string content
+        string size "체험 사이즈"
+        int height "체험자 키"
+        int weight "체험자 몸무게"
+        string photo_url
+    }
+
+    REVIEW_REPORT {
+        bigint id PK
+        bigint review_id "참조 (스냅샷 패턴, FK 없음)"
+        bigint reporter_id
+        string reporter_name
+        string review_content "📸 신고 시점 스냅샷"
+        string review_author "📸 신고 시점 스냅샷"
+        string reason
+        string status "PENDING/RESOLVED/DISMISSED"
+        string handled_note
+    }
+
+    CHAT_ROOM {
+        bigint id PK
+        enum type "DIRECT/GROUP"
+        string name "방 표시명"
+        bigint item_id "GROUP: 상품 단체방"
+        bigint user_id "DIRECT: 1:1 문의자"
+    }
+
+    CHAT_MESSAGE {
+        bigint id PK
+        bigint room_id FK
+        bigint sender_id
+        string sender_name
+        text content
+    }
+
+    CHAT_MESSAGE_REPORT {
+        bigint id PK
+        bigint message_id "참조 (스냅샷 패턴)"
+        bigint room_id
+        string reporter_email
+        bigint sender_id
+        string sender_name
+        string message_content "📸 신고 시점 스냅샷"
+        string reason
+        string status
+    }
+
+    ITEM_LIKE {
+        bigint id PK
+        bigint member_id FK
+        bigint item_id FK
+        datetime created_at
+    }
+
+    BRAND_LIKE {
+        bigint id PK
+        bigint member_id FK
+        bigint brand_id FK
+        datetime created_at
+    }
+
+    AUDIT_LOG {
+        bigint id PK
+        enum category "AUTH/MEMBER/ITEM/..."
+        enum event_type
+        enum result "SUCCESS/FAILURE"
+        bigint actor_id
+        string actor_email
+        string ip_address
+        string request_uri
+    }
+```
+
+---
+
+### 🔍 본인 담당 도메인 — 리뷰/신고 + 채팅 시스템 (Zoom-in)
+
+> 회원·상품 영역과 분리하여, 제가 직접 설계한 **리뷰/신고**와 **WebSocket 채팅** 도메인을 자세히 보여드립니다.  
+> 두 영역 모두 **'신고 스냅샷 패턴'** 으로 원본 데이터가 삭제돼도 신고 이력이 보존되도록 설계했습니다.
+
+```mermaid
+erDiagram
+    %% ===== 리뷰 & 신고 =====
+    MEMBER ||--o{ REVIEW : "리뷰 작성자"
+    ITEM ||--o{ REVIEW : "상품에 달린 리뷰"
+    REVIEW ||--o{ REVIEW_REPORT : "리뷰 신고"
+
+    %% ===== 채팅 =====
+    MEMBER ||--o{ CHAT_ROOM : "1:1 문의자"
+    ITEM ||--o{ CHAT_ROOM : "상품별 단체방"
+    CHAT_ROOM ||--o{ CHAT_MESSAGE : "메시지 보관"
+    CHAT_MESSAGE ||--o{ CHAT_MESSAGE_REPORT : "메시지 신고"
+    MEMBER ||--o{ CHAT_MESSAGE : "발신자"
+
+    MEMBER {
+        bigint id PK
+        string email UK
+        string nickname "채팅 표시명"
+        string name
+    }
+
+    ITEM {
+        bigint id PK
+        string item_no UK
+        string name
+    }
+
+    REVIEW {
+        bigint id PK
+        bigint item_id FK
+        bigint member_id FK
+        int rating "별점 1~5"
+        string content
+        string size "본인 사이즈"
+        int height "본인 키 (cm)"
+        int weight "본인 몸무게 (kg)"
+        string photo_url "리뷰 사진"
+        datetime created_at
+    }
+
+    REVIEW_REPORT {
+        bigint id PK
+        bigint review_id "원본 리뷰 참조"
+        bigint reporter_id "신고자 ID"
+        string reporter_name
+        string review_content "📸 스냅샷"
+        string review_author "📸 스냅샷"
+        string reason "신고 사유"
+        string status "PENDING/RESOLVED/DISMISSED"
+        string handled_note "관리자 처리 메모"
+        datetime created_at
+    }
+
+    CHAT_ROOM {
+        bigint id PK
+        enum type "DIRECT/GROUP"
+        string name "방 표시명"
+        bigint item_id "GROUP 전용: 상품 ID"
+        bigint user_id "DIRECT 전용: 문의자 ID"
+        datetime created_at
+    }
+
+    CHAT_MESSAGE {
+        bigint id PK
+        bigint room_id FK
+        bigint sender_id "발신자 ID"
+        string sender_name "발신자 닉네임"
+        text content "메시지 본문"
+        datetime created_at
+    }
+
+    CHAT_MESSAGE_REPORT {
+        bigint id PK
+        bigint message_id "원본 메시지 참조"
+        bigint room_id
+        string reporter_email "신고자"
+        bigint sender_id "신고 대상자"
+        string sender_name "📸 스냅샷"
+        string message_content "📸 스냅샷"
+        string reason
+        string status "PENDING/RESOLVED/DISMISSED"
+        string handled_note
+        datetime created_at
+    }
+```
+
+### 🎯 ERD 설계 포인트 (본인 어필)
+
+| 설계 결정 | 이유 | 효과 |
+|---|---|---|
+| **신고 스냅샷 패턴** (REVIEW_REPORT, CHAT_MESSAGE_REPORT) | 신고 시점에 본문·작성자를 복사 저장하여 원본 삭제와 무관하게 증거 보존 | 원본 리뷰/메시지가 삭제돼도 **신고 이력 영구 보존** → 분쟁 시 근거 자료로 활용 가능 |
+| **3단계 상태 머신** (PENDING → RESOLVED / DISMISSED) | 신고 라이프사이클을 명확히 모델링 | 관리자 페이지에서 **처리 흐름 가시화** + 재신고 방지 |
+| **CHAT_ROOM 단일 테이블** (DIRECT/GROUP 통합) | `type` enum + `item_id` / `user_id` 분기 처리 | 별도 테이블 분리 없이 **1:1 문의**와 **상품 단체방** 동시 지원 |
+| **중복 신고 방지** (`existsByReviewIdAndReporterId`) | 같은 사용자가 같은 리뷰를 여러 번 신고하지 못하도록 DB 쿼리 단에서 차단 | **무분별한 신고로 인한 시스템 악용 방지** |
 
 ---
 
@@ -84,10 +500,11 @@
 
 > 신입 개발자로서 백엔드 · AI · 인프라까지 폭넓게 담당하며 풀스택 통합 경험을 쌓았습니다.
 
-### 1. 프론트엔드 AWS 배포 및 CloudFront CDN 구성
-- React + Vite 빌드 → **S3 정적 호스팅** → **CloudFront CDN** 배포 전체 과정 수행
-- `/api/*`, `/uploads/*`, `/ws/*` Behavior 규칙으로 EC2 백엔드 프록시 구성
-- EC2 보안그룹 인바운드 규칙 관리, `.env` 환경변수 분리로 보안 강화
+### 1. AWS 통합 배포 (프론트엔드 + 백엔드)
+- **프론트엔드**: React + Vite 빌드 → **S3 정적 호스팅** → **CloudFront CDN** 배포
+- **백엔드**: Spring Boot → **EC2** 배포, 보안그룹 인바운드 규칙 직접 관리
+- CloudFront Behavior 규칙(`/api/*`, `/uploads/*`, `/ws/*`)으로 EC2 백엔드 프록시 연결
+- `.env` 환경변수 분리 + `.gitignore`로 시크릿 노출 차단
 
 ### 2. WebSocket 기반 실시간 채팅
 - `ChatRoom · ChatMessage · ChatParticipant · ChatReport` **4개 도메인 ERD 설계**
@@ -103,10 +520,12 @@
 - Open-Meteo API 연동 → 실시간 기온 · 체감온도 · 습도 기반 **OOTD 의류 추천**
 - Flask 서버에서 Spring 백엔드의 `/api/categories`와 연동, 추천 상품 카드와 상세 링크까지 자동 매칭
 
-### 4. 관리자 페이지 + 회원 탈퇴 정책 설계
-- 이메일 · 이름 · 역할 · 상태별 **다중 검색 + 페이징 + CRUD**
-- 회원 상태 `enum 3단계 (NORMAL · BLOCKED · WITHDRAWN)`, 인증 단계에서 차단 회원 로그인 거부
-- **'보존 + 마스킹' 패턴** 직접 설계: DB에는 영구 보존, 응답 DTO 단계에서 탈퇴 회원의 이메일 · 이름 · 전화번호 · 주소를 `****`로 마스킹
+### 4. 관리자 페이지 + 리뷰/신고 시스템
+- **관리자 페이지**: 이메일 · 이름 · 역할 · 상태별 **다중 검색 + 페이징 + CRUD**
+- **신고 스냅샷 패턴 직접 설계**: 신고 시점에 리뷰 본문 · 작성자를 `ReviewReport` 테이블에 복사 저장 → 원본 리뷰가 삭제돼도 **신고 이력은 증거로 영구 보존**
+- **신고 상태 머신**: `PENDING (접수) → RESOLVED (리뷰 삭제 + 처리완료) / DISMISSED (반려)` 3단계 라이프사이클로 신고 처리 흐름 명확화
+- **중복 신고 방지**: `existsByReviewIdAndReporterId` 쿼리로 같은 사용자가 동일 리뷰를 중복 신고하는 것 차단
+- **관리자 액션 분기**: `RESOLVE` 액션은 원본 리뷰까지 자동 삭제, `DISMISS` 액션은 신고만 반려 처리
 
 ### 5. 상품 크롤러 — Java ↔ Python 연동
 - Python `urllib`로 외부 사이트 내부 JSON API를 직접 호출하는 **효율적 수집 구조** 설계
@@ -121,8 +540,9 @@
 | 기능 | 설명 |
 |---|---|
 | 회원 관리 | JWT 인증 + 소셜 로그인 (Google · Kakao · Naver) |
-| 관리자 페이지 | 회원 검색 · 필터 · CRUD, 회원 상태 3단계 + 보존 마스킹 |
-| 상품 | 렌탈 / 경매 / 일반 구매 분기, EC2 + CloudFront 이미지 |
+| 관리자 페이지 | 회원 검색 · 필터 · CRUD, 권한 · 감사 로그 관리 |
+| 상품 | 렌탈 / 경매 / 일반 구매 분기 |
+| 리뷰 / 신고 | 신고 스냅샷 패턴 + 3단계 상태 머신 (PENDING → RESOLVED / DISMISSED), 중복 신고 차단 |
 | 실시간 채팅 | 1:1 관리자 문의 + 상품별 단체 채팅 (STOMP + SockJS) |
 | AI 챗봇 | TF-IDF + KoBERT 하이브리드, 카테고리별 추천 |
 | OOTD 추천 | 실시간 날씨 기반 의류 추천 → 상품 자동 매칭 |
@@ -231,7 +651,7 @@ python app.py
 #### 성과
 - 답변 정확도가 눈에 띄게 향상되었고, 모호한 질문도 자연스럽게 카테고리 버튼으로 유도
 - **응답 시간: 캐싱 적용 전 2~3초 → 적용 후 200ms 이내**
-- **배운 점:** "모델 선택은 무조건 최신 기술이 아니라, 데이터 양과 도메인 특성에 맞춰야 한다"는 점을 처음으로 체감. 학교에서 배운 이론과 실제 프로덕션 환경의 차이를 실감한 경험이었습니다.
+- **배운 점:** 최신 기술이 무조건 정답이 아니라 **데이터 양과 응답 속도 같은 제약 조건**에 맞춰 모델을 선택해야 한다는 점, 그리고 반복되는 임베딩 연산은 **캐싱만으로 10배 이상의 성능 개선**이 가능하다는 점을 직접 체감한 경험이었습니다.
 
 ---
 
@@ -239,9 +659,9 @@ python app.py
 
 | 이름 | 역할 | 담당 영역 |
 |---|---|---|
+| **신상훈** (본인) | 조원 | **AI 챗봇** (TF-IDF + KoBERT 하이브리드, 858 QA 데이터셋 직접 구축), **AWS S3 + CloudFront + EC2 통합 배포**, **상품 크롤러** (Java ↔ Python `ProcessBuilder` 연동), **WebSocket 실시간 채팅** (4개 도메인 ERD + JWT 인증 인터셉터), **리뷰/신고 시스템** (신고 스냅샷 패턴 + 상태 머신), 관리자 페이지 |
 | **황시영** | 조장 | 회원 도메인 (JWT 인증 · OAuth2 소셜 로그인), 결제 모듈 (PortOne V2), 프론트엔드 전체 아키텍처 (Vite 빌드 환경 · Zustand 상태 관리 · Axios 인터셉터), API 명세 / ERD 통합 · 일정 관리 |
-| **김재혁** | 조원 | 상품 도메인 (브랜드 · 카테고리 · 필터 · 태그), **입찰 경매 시스템** (실시간 호가, BuyBid / SellBid), **렌탈 주문 시스템** (RentalOrder · 연체 감지 · 반납), 리뷰 / 신고, 메인 / 상품 상세 페이지 UI |
-| **신상훈** (본인) | 조원 | 관리자 페이지 / 회원 탈퇴 정책, AI 챗봇 (Python), 상품 크롤러 (Java↔Python 연동), WebSocket 실시간 채팅, AWS S3 + CloudFront + EC2 배포 |
+| **김재혁** | 조원 | 상품 도메인 (브랜드 · 카테고리 · 필터 · 태그), 입찰 경매 시스템 (실시간 호가, BuyBid / SellBid), 렌탈 주문 시스템 (RentalOrder · 연체 감지 · 반납), 메인 / 상품 상세 페이지 UI |
 
 ---
 
